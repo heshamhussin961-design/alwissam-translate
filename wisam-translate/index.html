@@ -1,0 +1,1997 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="html-root">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="logo.png" />
+    <!-- ══ PWA / App-Like Meta Tags ══ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#0f766e" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <title>الوسام للترجمة القانونية | Al Wissam Legal Translation</title>
+
+    <!-- GA4 Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <!-- Schema: LocalBusiness + LegalService -->
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"LegalService","name":"الوسام للترجمة القانونية","alternateName":"Al Wissam Legal Translation","description":"UAE certified legal translation, company formation, and document attestation since 1998.","url":"https://alwissam.net","logo":"https://alwissam.net/logo.png","telephone":"+971588205679","email":"info@alwissam.net","foundingDate":"1998","priceRange":"$$","address":{"@type":"PostalAddress","addressLocality":"Dubai","addressCountry":"AE"},"openingHours":"Mo-Sa 08:00-20:00","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"200","bestRating":"5"},"sameAs":["https://wa.me/971588205679"]}
+    </script>
+    <!-- ══ Security: Content-Security-Policy ══ -->
+    <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src  'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com https://unpkg.com;
+    style-src   'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://unpkg.com;
+    font-src    'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
+    img-src     'self' data:;
+    connect-src 'none';
+  ">
+    <meta name="description"
+        content="The UAE's trusted destination for legal translation, company formation, and document attestation since 1998." />
+
+    <!-- Google Font: Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome CDN + SRI -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous" />
+
+    <!-- AOS (Animate On Scroll) + SRI -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+        integrity="sha384-/rJKQnzOkEo+daG0jMjU1IwwY9unxt1NBw3Ef2fmOJ3PW/TfAg2KXVoWwMZQZtw9" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+        integrity="sha384-n1AULnKdMJlK1oQCLNDL9qZsDgXtH6jRYFCpBtWFc+a9Yve0KSoMn575rk755NJZ"
+        crossorigin="anonymous"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        teal: { 950: '#042f2e', 900: '#064e3b', 800: '#065f46', 700: '#047857', 600: '#059669', 500: '#0f766e' },
+                        lime: { 400: '#a3e635', 500: '#84cc16', 600: '#65a30d' }
+                    },
+                    fontFamily: { cairo: ['Cairo', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        * {
+            font-family: 'Cairo', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+            /* remove tap flash on mobile */
+            box-sizing: border-box;
+        }
+
+        /* ── No horizontal scroll (strict) ── */
+        html,
+        body {
+            overflow-x: hidden;
+            width: 100%;
+            /* Safe area for notched phones */
+            padding-left: env(safe-area-inset-left);
+            padding-right: env(safe-area-inset-right);
+        }
+
+        /* ── Navbar scroll ── */
+        .navbar-scrolled {
+            background: rgba(4, 47, 46, 0.97) !important;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ── Nav link underline ── */
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: #84cc16;
+            transition: width 0.35s ease;
+        }
+
+        [dir="ltr"] .nav-link::after {
+            right: auto;
+            left: 0;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* ── Hero ── */
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(4, 47, 46, 0.96) 0%, rgba(6, 78, 59, 0.88) 50%, rgba(4, 47, 46, 0.93) 100%);
+        }
+
+        .hero-pattern {
+            background-image:
+                linear-gradient(rgba(132, 204, 22, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(132, 204, 22, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        /* ── WhatsApp pulse ── */
+        .wa-pulse {
+            animation: pulse-ring 2s ease-out infinite;
+        }
+
+        @keyframes pulse-ring {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.65);
+            }
+
+            70% {
+                box-shadow: 0 0 0 18px rgba(37, 211, 102, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* ── Floating ── */
+        .float-1 {
+            animation: floatY 6s ease-in-out infinite;
+        }
+
+        .float-2 {
+            animation: floatY 8s ease-in-out infinite 1s;
+        }
+
+        .float-3 {
+            animation: floatY 7s ease-in-out infinite 2s;
+        }
+
+        @keyframes floatY {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-18px);
+            }
+        }
+
+        /* ── Service card shimmer ── */
+        .service-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(to bottom left, rgba(132, 204, 22, 0.07) 0%, transparent 60%);
+            transform: rotate(-30deg) translateY(-30%);
+            transition: transform 0.6s ease;
+            pointer-events: none;
+        }
+
+        .service-card:hover::before {
+            transform: rotate(-30deg) translateY(10%);
+        }
+
+        /* ── Scroll progress ── */
+        #progress-bar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to left, #84cc16, #059669);
+            z-index: 9999;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        /* ── Mobile Drawer Menu ── */
+        #mobile-menu {
+            transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+
+        #mobile-menu.open {
+            max-height: 480px;
+            opacity: 1;
+        }
+
+        /* ── Language toggle button (desktop) ── */
+        #lang-btn {
+            background: transparent;
+            border: 1.5px solid rgba(132, 204, 22, 0.6);
+            color: #a3e635;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.82rem;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        #lang-btn:hover {
+            background: rgba(132, 204, 22, 0.15);
+            border-color: #84cc16;
+        }
+
+        /* ── Mobile lang button ── */
+        #lang-btn-mobile {
+            background: transparent;
+            border: 1.5px solid rgba(132, 204, 22, 0.5);
+            color: #a3e635;
+            font-weight: 700;
+            padding: 10px 16px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        #lang-btn-mobile:hover,
+        #lang-btn-mobile:active {
+            background: rgba(132, 204, 22, 0.15);
+        }
+
+        /* ── Thumb-friendly touch targets ── */
+        .mobile-nav-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.2s ease;
+        }
+
+        .mobile-nav-link:active {
+            color: #84cc16;
+        }
+
+        .mobile-nav-link i {
+            color: #84cc16;
+            width: 18px;
+            text-align: center;
+        }
+
+        /* ── Floating WA button RTL/LTR aware ── */
+        #wa-float {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            /* default RTL */
+            right: auto;
+            z-index: 9999;
+        }
+
+        [dir="ltr"] #wa-float {
+            left: auto;
+            right: 20px;
+            /* flip for LTR */
+        }
+
+        /* ── LTR fixes ── */
+        [dir="ltr"] .stat-num {
+            direction: ltr;
+        }
+
+        /* ── Reduce hero padding on mobile ── */
+        @media (max-width: 767px) {
+            .hero-inner {
+                padding-top: 7rem !important;
+                padding-bottom: 4rem !important;
+            }
+
+            .section-py {
+                padding-top: 3.5rem !important;
+                padding-bottom: 3.5rem !important;
+            }
+        }
+
+        /* PWA Banner */
+        #pwa-banner {
+            position: fixed;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9998;
+            background: linear-gradient(135deg, #042f2e, #065f46);
+            border: 1px solid rgba(132, 204, 22, 0.4);
+            border-radius: 20px;
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            max-width: calc(100vw - 40px);
+            width: 340px;
+            animation: slideUpBanner 0.5s ease;
+        }
+
+        @keyframes slideUpBanner {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+
+        #pwa-banner.hidden {
+            display: none !important;
+        }
+
+        /* WA Tooltip */
+        #wa-float-tooltip {
+            position: absolute;
+            bottom: 110%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #042f2e;
+            color: #a3e635;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 6px 12px;
+            border-radius: 10px;
+            white-space: nowrap;
+            border: 1px solid rgba(132, 204, 22, 0.4);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        #wa-float:hover #wa-float-tooltip {
+            opacity: 1;
+        }
+
+        /* Price Calculator */
+        .calc-option input[type=radio] {
+            display: none;
+        }
+
+        .calc-opt-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 14px;
+            border-radius: 14px;
+            border: 1.5px solid rgba(255, 255, 255, 0.12);
+            cursor: pointer;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.25s ease;
+        }
+
+        .calc-opt-label:hover {
+            border-color: rgba(132, 204, 22, 0.4);
+            color: #a3e635;
+        }
+
+        .calc-option input[type=radio]:checked+.calc-opt-label {
+            background: rgba(132, 204, 22, 0.15);
+            border-color: #84cc16;
+            color: #a3e635;
+        }
+
+        #price-result {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        /* Upload Form */
+        .upload-dropzone {
+            border: 2px dashed rgba(132, 204, 22, 0.3);
+            border-radius: 18px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .upload-dropzone:hover,
+        .upload-dropzone.drag-over {
+            border-color: #84cc16;
+            background: rgba(132, 204, 22, 0.06);
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800 overflow-x-hidden" style="-webkit-text-size-adjust:100%;">
+
+    <!-- PWA INSTALL BANNER -->
+    <div id="pwa-banner" class="hidden">
+        <div class="w-10 h-10 bg-lime-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-download text-lime-400 text-lg"></i>
+        </div>
+        <div class="flex-1 min-w-0">
+            <div class="text-white font-black text-sm">ثبّت التطبيق</div>
+            <div class="text-white/50 text-xs">وصول سريع بدون متصفح</div>
+        </div>
+        <button id="pwa-install-btn"
+            class="bg-lime-500 hover:bg-lime-400 text-white font-black text-xs px-4 py-2 rounded-xl transition-colors flex-shrink-0">ثبّت</button>
+        <button id="pwa-dismiss-btn"
+            class="text-white/30 hover:text-white/60 transition-colors text-xl leading-none flex-shrink-0">&times;</button>
+    </div>
+
+    <!-- ═══ SCROLL PROGRESS BAR ═══ -->
+    <div id="progress-bar"></div>
+
+    <!-- ═══════════════════════ NAVBAR ═══════════════════════ -->
+    <nav id="navbar" class="fixed top-0 right-0 left-0 z-50 transition-all duration-500 py-2 md:py-3">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 gap-3">
+
+                <!-- LEFT (RTL) / RIGHT (LTR): CTA + Lang toggle — desktop only -->
+                <div class="hidden md:flex items-center gap-3">
+                    <a href="#contact" id="nav-cta"
+                        class="bg-lime-500 hover:bg-lime-600 text-white font-bold py-2.5 px-5 rounded-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-lime-500/30 text-sm whitespace-nowrap"
+                        data-ar="احصل على تسعيرة" data-en="Get a Quote">احصل على تسعيرة</a>
+                    <button id="lang-btn" aria-label="Toggle language">English</button>
+                </div>
+
+                <!-- CENTER: Nav links — desktop only -->
+                <div class="hidden md:flex items-center gap-7 flex-1 justify-center">
+                    <a href="#home"
+                        class="nav-link text-white font-semibold hover:text-lime-400 transition-colors text-sm"
+                        data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+                    <a href="#services"
+                        class="nav-link text-white font-semibold hover:text-lime-400 transition-colors text-sm"
+                        data-ar="خدماتنا" data-en="Services">خدماتنا</a>
+                    <a href="#about"
+                        class="nav-link text-white font-semibold hover:text-lime-400 transition-colors text-sm"
+                        data-ar="من نحن" data-en="About Us">من نحن</a>
+                    <a href="#contact"
+                        class="nav-link text-white font-semibold hover:text-lime-400 transition-colors text-sm"
+                        data-ar="اتصل بنا" data-en="Contact">اتصل بنا</a>
+                </div>
+
+                <!-- Logo -->
+                <div class="flex items-center flex-shrink-0">
+                    <img src="logo.png" alt="الوسام للترجمة القانونية"
+                        class="h-12 md:h-16 object-contain drop-shadow-lg" />
+                </div>
+
+                <!-- Hamburger — mobile only -->
+                <button id="menu-btn"
+                    class="flex md:hidden items-center justify-center w-10 h-10 rounded-xl bg-white/10 text-white text-xl focus:outline-none active:bg-white/20 transition-colors"
+                    aria-label="Toggle menu" aria-expanded="false">
+                    <i class="fas fa-bars" id="menu-icon"></i>
+                </button>
+            </div>
+
+            <!-- ══ MOBILE DRAWER ══ -->
+            <div id="mobile-menu" class="md:hidden">
+                <div
+                    class="bg-teal-950/98 backdrop-blur-xl rounded-2xl mt-2 px-5 pb-5 shadow-2xl border border-white/10">
+
+                    <!-- Nav Links -->
+                    <a href="#home" class="mobile-nav-link" data-ar="الرئيسية" data-en="Home">
+                        <i class="fas fa-home"></i>الرئيسية
+                    </a>
+                    <a href="#services" class="mobile-nav-link" data-ar="خدماتنا" data-en="Services">
+                        <i class="fas fa-briefcase"></i>خدماتنا
+                    </a>
+                    <a href="#about" class="mobile-nav-link" data-ar="من نحن" data-en="About Us">
+                        <i class="fas fa-info-circle"></i>من نحن
+                    </a>
+                    <a href="#contact" class="mobile-nav-link" data-ar="اتصل بنا" data-en="Contact">
+                        <i class="fas fa-phone"></i>اتصل بنا
+                    </a>
+
+                    <!-- CTA + Lang side by side -->
+                    <div class="flex gap-3 mt-4">
+                        <a href="#contact"
+                            class="flex-1 bg-lime-500 active:bg-lime-600 text-white font-bold py-3 rounded-xl text-center text-sm transition-colors"
+                            data-ar="احصل على تسعيرة" data-en="Get a Quote">احصل على تسعيرة</a>
+                        <button id="lang-btn-mobile" aria-label="Toggle language">English</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════════ HERO ═══════════════════════ -->
+    <section id="home" class="relative min-h-screen flex items-center hero-pattern overflow-hidden"
+        style="background-color:#042f2e;">
+
+        <div class="absolute top-20 left-10 w-72 h-72 bg-lime-500/10 rounded-full blur-3xl float-1 pointer-events-none">
+        </div>
+        <div
+            class="absolute bottom-20 right-10 w-96 h-96 bg-teal-600/20 rounded-full blur-3xl float-2 pointer-events-none">
+        </div>
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-lime-500/5 rounded-full blur-3xl float-3 pointer-events-none">
+        </div>
+        <div class="hero-overlay absolute inset-0"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 hero-inner text-center w-full"
+            style="padding-top:8rem;padding-bottom:5rem;">
+
+            <!-- Badge -->
+            <div data-aos="fade-down" data-aos-duration="800"
+                class="inline-flex items-center gap-2 bg-lime-500/20 border border-lime-500/40 text-lime-400 font-semibold text-sm px-4 py-2 rounded-full mb-8 backdrop-blur-sm">
+                <i class="fas fa-star text-lime-400"></i>
+                <span data-ar="معتمدون في الإمارات منذ 1998" data-en="UAE Certified Since 1998">معتمدون في الإمارات منذ
+                    1998</span>
+                <i class="fas fa-star text-lime-400"></i>
+            </div>
+
+            <!-- Main Headline -->
+            <h1 id="hero-headline" data-aos="fade-up" data-aos-duration="900" data-aos-delay="100"
+                class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-5"
+                data-ar="الوسام للترجمة القانونية..&lt;br/&gt;&lt;span class=&quot;text-lime-400&quot;&gt;ثقتكم عبر اللغات والثقافات&lt;/span&gt;&lt;br/&gt;&lt;span class=&quot;text-2xl sm:text-3xl md:text-4xl font-bold text-white/80&quot;&gt;منذ عام 1998&lt;/span&gt;"
+                data-en="Al Wissam Legal Translation..&lt;br/&gt;&lt;span class=&quot;text-lime-400&quot;&gt;Since 1998, our words have carried trust&lt;/span&gt;&lt;br/&gt;&lt;span class=&quot;text-2xl sm:text-3xl md:text-4xl font-bold text-white/80&quot;&gt;across languages and cultures.&lt;/span&gt;">
+                الوسام للترجمة القانونية..<br />
+                <span class="text-lime-400">ثقتكم عبر اللغات والثقافات</span><br />
+                <span class="text-2xl sm:text-3xl md:text-4xl font-bold text-white/80">منذ عام 1998</span>
+            </h1>
+
+            <!-- Sub-headline -->
+            <p data-aos="fade-up" data-aos-duration="900" data-aos-delay="200"
+                class="text-sm sm:text-base md:text-xl text-white/75 max-w-3xl mx-auto mb-8 leading-relaxed font-medium px-2"
+                data-ar="الوجهة المعتمدة في الإمارات للترجمة، تأسيس الشركات، وتوثيق المعاملات الرسمية."
+                data-en="The UAE's trusted destination for legal translation, company formation, and document attestation.">
+                الوجهة المعتمدة في الإمارات للترجمة، تأسيس الشركات، وتوثيق المعاملات الرسمية.
+            </p>
+
+            <!-- Buttons -->
+            <div data-aos="fade-up" data-aos-duration="900" data-aos-delay="300"
+                class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 px-2">
+                <a href="#services"
+                    class="group bg-lime-500 hover:bg-lime-600 active:bg-lime-700 text-white font-bold py-4 px-8 rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-lime-500/40 flex items-center gap-3 text-base w-full sm:w-auto justify-center"
+                    data-ar="تصفح خدماتنا" data-en="Our Services">
+                    <i class="fas fa-th-large group-hover:rotate-12 transition-transform duration-300"></i>
+                    تصفح خدماتنا
+                </a>
+                <a href="https://wa.me/971588205679" target="_blank" rel="noopener"
+                    class="group bg-white/10 hover:bg-green-500 active:bg-green-600 border border-white/30 hover:border-green-500 text-white font-bold py-4 px-8 rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-green-500/40 flex items-center gap-3 text-base backdrop-blur-sm w-full sm:w-auto justify-center"
+                    data-ar="تواصل عبر واتساب" data-en="WhatsApp Us">
+                    <i
+                        class="fab fa-whatsapp text-green-400 group-hover:text-white text-xl transition-colors duration-300"></i>
+                    تواصل عبر واتساب
+                </a>
+            </div>
+
+            <!-- Scroll indicator -->
+            <div data-aos="fade-up" data-aos-delay="600" class="mt-20 flex flex-col items-center gap-2 text-white/40">
+                <span class="text-xs font-medium tracking-widest" data-ar="اكتشف المزيد" data-en="Discover More">اكتشف
+                    المزيد</span>
+                <div class="w-px h-12 bg-gradient-to-b from-white/40 to-transparent animate-bounce"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ STATS ═══════════════════════ -->
+    <section class="bg-teal-900 py-14">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div data-aos="fade-up" data-aos-delay="0">
+                    <div class="text-4xl md:text-5xl font-black text-lime-400 mb-1">+25</div>
+                    <div class="text-white/70 font-semibold text-sm" data-ar="سنة خبرة" data-en="Years of Experience">
+                        سنة خبرة</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-4xl md:text-5xl font-black text-lime-400 mb-1">+50</div>
+                    <div class="text-white/70 font-semibold text-sm" data-ar="لغة معتمدة" data-en="Certified Languages">
+                        لغة معتمدة</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-4xl md:text-5xl font-black text-lime-400 mb-1">+100K</div>
+                    <div class="text-white/70 font-semibold text-sm" data-ar="وثيقة مُعالَجة"
+                        data-en="Documents Processed">وثيقة مُعالَجة</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-4xl md:text-5xl font-black text-lime-400 mb-1">100%</div>
+                    <div class="text-white/70 font-semibold text-sm" data-ar="رضا العملاء"
+                        data-en="Client Satisfaction">رضا العملاء</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave Divider -->
+    <div class="bg-teal-900 text-white">
+        <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;">
+            <path d="M0,0 C360,60 1080,60 1440,0 L1440,60 L0,60 Z" fill="white" />
+        </svg>
+    </div>
+
+    <!-- ═══════════════════════ SERVICES ═══════════════════════ -->
+    <section id="services" class="bg-white py-12 md:py-24 section-py">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Header -->
+            <div class="text-center mb-16">
+                <div data-aos="fade-down"
+                    class="inline-flex items-center gap-2 bg-lime-500/10 text-lime-600 font-bold text-sm px-4 py-2 rounded-full mb-4 border border-lime-500/20">
+                    <i class="fas fa-briefcase"></i>
+                    <span data-ar="ما نقدمه لكم" data-en="What We Offer">ما نقدمه لكم</span>
+                </div>
+                <h2 data-aos="fade-up" data-aos-delay="100"
+                    class="text-3xl sm:text-4xl md:text-5xl font-black text-teal-900 mb-4">
+                    <span data-ar="خدماتنا " data-en="Our ">خدماتنا </span><span class="text-lime-500"
+                        data-ar="المتكاملة" data-en="Services">المتكاملة</span>
+                </h2>
+                <p data-aos="fade-up" data-aos-delay="200"
+                    class="text-gray-500 max-w-2xl mx-auto text-base md:text-lg font-medium leading-relaxed"
+                    data-ar="نقدم طيفاً شاملاً من الخدمات القانونية واللغوية المعتمدة بأعلى مستوى من الجودة والدقة."
+                    data-en="We offer a comprehensive range of certified legal and linguistic services at the highest standards of quality and accuracy.">
+                    نقدم طيفاً شاملاً من الخدمات القانونية واللغوية المعتمدة بأعلى مستوى من الجودة والدقة.
+                </p>
+            </div>
+
+            <!-- Cards Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+
+                <!-- Card 1 -->
+                <div data-aos="fade-up" data-aos-delay="0"
+                    class="service-card group bg-white border border-gray-100 rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 hover:border-lime-500/30 cursor-default">
+                    <div
+                        class="w-14 h-14 bg-teal-900/5 group-hover:bg-lime-500/10 rounded-2xl flex items-center justify-center mb-5 transition-colors duration-300">
+                        <i
+                            class="fas fa-gavel text-2xl text-teal-700 group-hover:text-lime-600 transition-colors duration-300"></i>
+                    </div>
+                    <h3 class="text-teal-900 font-black text-lg mb-2 leading-snug"
+                        data-ar="الترجمة القانونية والمعتمدة لجميع اللغات"
+                        data-en="Legal & Certified Translation - All Languages">الترجمة القانونية والمعتمدة لجميع اللغات
+                    </h3>
+                    <p class="text-gray-500 text-sm leading-relaxed"
+                        data-ar="موثقة بختم رسمي معترف به لدى الجهات الحكومية."
+                        data-en="Officially stamped and recognized by all government authorities.">
+                        موثقة بختم رسمي معترف به لدى الجهات الحكومية.
+                    </p>
+                    <div class="mt-4 w-8 h-1 bg-lime-500 rounded-full group-hover:w-16 transition-all duration-300">
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div data-aos="fade-up" data-aos-delay="80"
+                    class="service-card group bg-white border border-gray-100 rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 hover:border-lime-500/30 cursor-default">
+                    <div
+                        class="w-14 h-14 bg-teal-900/5 group-hover:bg-lime-500/10 rounded-2xl flex items-center justify-center mb-5 transition-colors duration-300">
+                        <i
+                            class="fas fa-id-card text-2xl text-teal-700 group-hover:text-lime-600 transition-colors duration-300"></i>
+                    </div>
+                    <h3 class="text-teal-900 font-black text-lg mb-2 leading-snug" data-ar="ترجمة رخص القيادة"
+                        data-en="Driving License Translation">ترجمة رخص القيادة</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed"
+                        data-ar="ترجمة معتمدة لجميع الجنسيات بأسرع وقت وأعلى دقة."
+                        data-en="Certified translation for all nationalities, fast and accurate.">
+                        ترجمة معتمدة لجميع الجنسيات بأسرع وقت وأعلى دقة.
+                    </p>
+                    <div class="mt-4 w-8 h-1 bg-lime-500 rounded-full group-hover:w-16 transition-all duration-300">
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div data-aos="fade-up" data-aos-delay="160"
+                    class="service-card group bg-white border border-gray-100 rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 hover:border-lime-500/30 cursor-default">
+                    <div
+                        class="w-14 h-14 bg-teal-900/5 group-hover:bg-lime-500/10 rounded-2xl flex items-center justify-center mb-5 transition-colors duration-300">
+                        <i
+                            class="fas fa-microphone-alt text-2xl text-teal-700 group-hover:text-lime-600 transition-colors duration-300"></i>
+                    </div>
+                    <h3 class="text-teal-900 font-black text-lg mb-2 leading-snug" data-ar="الترجمة الفورية للمؤتمرات"
+                        data-en="Interpretation for Events & Conferences">الترجمة الفورية للمؤتمرات</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed"
+                        data-ar="مترجمون فوريون محترفون للاجتماعات والجلسات الرسمية."
+                        data-en="Professional interpreters for meetings, events and official sessions.">
+                        مترجمون فوريون محترفون للاجتماعات والجلسات الرسمية.
+                    </p>
+                    <div class="mt-4 w-8 h-1 bg-lime-500 rounded-full group-hover:w-16 transition-all duration-300">
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div data-aos="fade-up" data-aos-delay="240"
+                    class="service-card group bg-white border border-gray-100 rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 hover:border-lime-500/30 cursor-default">
+                    <div
+                        class="w-14 h-14 bg-teal-900/5 group-hover:bg-lime-500/10 rounded-2xl flex items-center justify-center mb-5 transition-colors duration-300">
+                        <i
+                            class="fas fa-graduation-cap text-2xl text-teal-700 group-hover:text-lime-600 transition-colors duration-300"></i>
+                    </div>
+                    <h3 class="text-teal-900 font-black text-lg mb-2 leading-snug" data-ar="معادلة الشهادات الدراسية"
+                        data-en="Educational Certificate Equivalency">معادلة الشهادات الدراسية</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed"
+                        data-ar="اعتماد وتوثيق الشهادات الأكاديمية لدى وزارة التربية والتعليم."
+                        data-en="Academic credential attestation with the Ministry of Education.">
+                        اعتماد وتوثيق الشهادات الأكاديمية لدى وزارة التربية والتعليم.
+                    </p>
+                    <div class="mt-4 w-8 h-1 bg-lime-500 rounded-full group-hover:w-16 transition-all duration-300">
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div data-aos="fade-up" data-aos-delay="0"
+                    class="service-card group bg-white border border-gray-100 rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 hover:border-lime-500/30 cursor-default">
+                    <div
+                        class="w-14 h-14 bg-teal-900/5 group-hover:bg-lime-500/10 rounded-2xl flex items-center justify-center mb-5 transition-colors duration-300">
+                        <i
+                            class="fas fa-file-contract text-2xl text-teal-700 group-hover:text-lime-600 transition-colors duration-300"></i>
+                    </div>
+                    <h3 class="text-teal-900 font-black text-lg mb-2 leading-snug"
+                        data-ar="كتابة وتصديق العقود - كاتب العدل"
+                        data-en="Writing & Attesting Contracts - Notary Public">كتابة وتصديق العقود - كاتب العدل</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed"
+                        data-ar="بيع، إيجار، شراكة وغيرها مع توثيق رسمي لدى كاتب العدل."
+                        data-en="Sale, lease, partnership contracts and more, officially notarized.">
+                        بيع، إيجار، شراكة وغيرها مع توثيق رسمي لدى كاتب العدل.
+                    </p>
+                    <div class="mt-4 w-8 h-1 bg-lime-500 rounded-full group-hover:w-16 transition-all duration-300">
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div data-aos="fade-up" data-aos-delay="80"
+                    class="service-card group bg-white border border-gray-100 rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 hover:border-lime-500/30 cursor-default">
+                    <div
+                        class="w-14 h-14 bg-teal-900/5 group-hover:bg-lime-500/10 rounded-2xl flex items-center justify-center mb-5 transition-colors duration-300">
+                        <i
+                            class="fas fa-building text-2xl text-teal-700 group-hover:text-lime-600 transition-colors duration-300"></i>
+                    </div>
+                    <h3 class="text-teal-900 font-black text-lg mb-2 leading-snug"
+                        data-ar="تأسيس الشركات من الألف إلى الياء" data-en="Company Formation from A-Z">تأسيس الشركات من
+                        الألف إلى الياء</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed"
+                        data-ar="تأسيس كامل وتراخيص وتوثيقات رسمية في الإمارات."
+                        data-en="Full company setup, licensing and official documentation in the UAE.">
+                        تأسيس كامل وتراخيص وتوثيقات رسمية في الإمارات.
+                    </p>
+                    <div class="mt-4 w-8 h-1 bg-lime-500 rounded-full group-hover:w-16 transition-all duration-300">
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div data-aos="fade-up" data-aos-delay="160"
+                    class="service-card group bg-white border border-gray-100 rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 hover:border-lime-500/30 cursor-default">
+                    <div
+                        class="w-14 h-14 bg-teal-900/5 group-hover:bg-lime-500/10 rounded-2xl flex items-center justify-center mb-5 transition-colors duration-300">
+                        <i
+                            class="fas fa-scroll text-2xl text-teal-700 group-hover:text-lime-600 transition-colors duration-300"></i>
+                    </div>
+                    <h3 class="text-teal-900 font-black text-lg mb-2 leading-snug" data-ar="كتابة وتسجيل الوصايا"
+                        data-en="Will Writing & Registration">كتابة وتسجيل الوصايا</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed"
+                        data-ar="صياغة وصايا وعهود قانونية رسمية ومسجلة بشكل معتمد."
+                        data-en="Drafting and registering official wills and legal pledges.">
+                        صياغة وصايا وعهود قانونية رسمية ومسجلة بشكل معتمد.
+                    </p>
+                    <div class="mt-4 w-8 h-1 bg-lime-500 rounded-full group-hover:w-16 transition-all duration-300">
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div data-aos="fade-up" data-aos-delay="240"
+                    class="service-card group bg-white border border-gray-100 rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 hover:border-lime-500/30 cursor-default">
+                    <div
+                        class="w-14 h-14 bg-teal-900/5 group-hover:bg-lime-500/10 rounded-2xl flex items-center justify-center mb-5 transition-colors duration-300">
+                        <i
+                            class="fas fa-stamp text-2xl text-teal-700 group-hover:text-lime-600 transition-colors duration-300"></i>
+                    </div>
+                    <h3 class="text-teal-900 font-black text-lg mb-2 leading-snug"
+                        data-ar="توثيق وزارة الخارجية والسفارات" data-en="Attestation of MOFA, MOJ & Embassies">توثيق
+                        وزارة الخارجية والسفارات</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed"
+                        data-ar="توثيق كامل ومعتمد لدى وزارة الخارجية، العدل، والسفارات."
+                        data-en="Full attestation with MOFA, Ministry of Justice and Embassies.">
+                        توثيق كامل ومعتمد لدى وزارة الخارجية، العدل، والسفارات.
+                    </p>
+                    <div class="mt-4 w-8 h-1 bg-lime-500 rounded-full group-hover:w-16 transition-all duration-300">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ ABOUT ═══════════════════════ -->
+    <section id="about" class="bg-gray-50 py-12 md:py-24 overflow-hidden section-py">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+                <!-- Content side -->
+                <div>
+                    <div data-aos="fade-right"
+                        class="inline-flex items-center gap-2 bg-lime-500/10 text-lime-600 font-bold text-sm px-4 py-2 rounded-full mb-4 border border-lime-500/20">
+                        <i class="fas fa-info-circle"></i>
+                        <span data-ar="من نحن" data-en="About Us">من نحن</span>
+                    </div>
+                    <h2 data-aos="fade-right" data-aos-delay="100"
+                        class="text-3xl sm:text-4xl md:text-5xl font-black text-teal-900 leading-tight mb-6">
+                        <span data-ar="ربع قرن من " data-en="A Quarter Century of ">ربع قرن من </span>
+                        <span class="text-lime-500" data-ar="الثقة والتميز" data-en="Trust & Excellence">الثقة
+                            والتميز</span>
+                    </h2>
+                    <p data-aos="fade-right" data-aos-delay="200"
+                        class="text-gray-600 text-base md:text-lg leading-relaxed mb-6 font-medium"
+                        data-ar='منذ عام 1998، تُعدّ "الوسام للترجمة القانونية" المرجع الأول في الإمارات لكل ما يتعلق بالترجمة القانونية وتوثيق المستندات الرسمية. نخدم الأفراد والشركات والجهات الحكومية بأعلى معايير الدقة والأمانة.'
+                        data-en='Since 1998, Al Wissam Legal Translation has been the UAE`s first reference for all matters related to legal translation and official document attestation. We serve individuals, companies and government entities with the highest standards of accuracy and integrity.'>
+                        منذ عام 1998، تُعدّ "الوسام للترجمة القانونية" المرجع الأول في الإمارات لكل ما يتعلق بالترجمة
+                        القانونية وتوثيق المستندات الرسمية.
+                    </p>
+
+                    <!-- Feature list -->
+                    <div data-aos="fade-right" data-aos-delay="400" class="flex flex-col gap-3">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-6 h-6 bg-lime-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="text-gray-700 font-semibold"
+                                data-ar="معتمدون رسمياً لدى الجهات الحكومية الإماراتية"
+                                data-en="Officially accredited with UAE government authorities">معتمدون رسمياً لدى
+                                الجهات الحكومية الإماراتية</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-6 h-6 bg-lime-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="text-gray-700 font-semibold" data-ar="فريق من مترجمين قانونيين متخصصين"
+                                data-en="Team of specialized legal translators">فريق من مترجمين قانونيين متخصصين</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-6 h-6 bg-lime-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="text-gray-700 font-semibold" data-ar="سرية تامة وأمان للمستندات"
+                                data-en="Full confidentiality and document security">سرية تامة وأمان للمستندات</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-6 h-6 bg-lime-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="text-gray-700 font-semibold" data-ar="تسليم سريع مع ضمان الجودة"
+                                data-en="Fast delivery with quality guarantee">تسليم سريع مع ضمان الجودة</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual side -->
+                <div data-aos="fade-left" data-aos-delay="200" class="relative">
+                    <div class="relative bg-teal-900 rounded-3xl p-8 overflow-hidden shadow-2xl">
+                        <div
+                            class="absolute top-0 left-0 w-40 h-40 bg-lime-500/20 rounded-full -translate-x-10 -translate-y-10 blur-2xl">
+                        </div>
+                        <div
+                            class="absolute bottom-0 right-0 w-32 h-32 bg-teal-600/30 rounded-full translate-x-8 translate-y-8 blur-2xl">
+                        </div>
+                        <div class="relative z-10 flex justify-center mb-8">
+                            <img src="logo.png" alt="الوسام للترجمة القانونية"
+                                class="h-32 md:h-40 object-contain drop-shadow-2xl" />
+                        </div>
+                        <div class="relative z-10 text-center">
+                            <i class="fas fa-quote-right text-lime-500 text-3xl mb-3 block"></i>
+                            <p class="text-white/90 font-semibold text-lg leading-relaxed mb-2"
+                                data-ar='"الدقة ليست خياراً، بل هي التزام."'
+                                data-en='"Accuracy is not a choice — it is a commitment."'>
+                                "الدقة ليست خياراً، بل هي التزام."
+                            </p>
+                            <p class="text-lime-400 font-bold text-sm" data-ar="— الوسام للترجمة القانونية"
+                                data-en="— Al Wissam Legal Translation">— الوسام للترجمة القانونية</p>
+                        </div>
+                        <div class="relative z-10 grid grid-cols-3 gap-4 mt-8 pt-6 border-t border-white/10">
+                            <div class="text-center">
+                                <div class="text-lime-400 font-black text-2xl">+25</div>
+                                <div class="text-white/60 text-xs font-medium" data-ar="سنة" data-en="Years">سنة</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-lime-400 font-black text-2xl">+50</div>
+                                <div class="text-white/60 text-xs font-medium" data-ar="لغة" data-en="Languages">لغة
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-lime-400 font-black text-2xl">UAE</div>
+                                <div class="text-white/60 text-xs font-medium" data-ar="معتمد" data-en="Certified">معتمد
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ CONTACT ═══════════════════════ -->
+    <section id="contact" class="bg-teal-900 py-12 md:py-24 relative overflow-hidden section-py">
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-0 right-1/4 w-96 h-96 bg-lime-500/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 left-1/4 w-96 h-96 bg-teal-950/50 rounded-full blur-3xl"></div>
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div data-aos="fade-down"
+                    class="inline-flex items-center gap-2 bg-lime-500/20 text-lime-400 font-bold text-sm px-4 py-2 rounded-full mb-4 border border-lime-500/30">
+                    <i class="fas fa-phone-alt"></i>
+                    <span data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</span>
+                </div>
+                <h2 data-aos="fade-up" data-aos-delay="100"
+                    class="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4">
+                    <span data-ar="هل تحتاج مساعدة؟ " data-en="Need Help? ">هل تحتاج مساعدة؟ </span>
+                    <span class="text-lime-400" data-ar="نحن هنا لك" data-en="We're Here For You">نحن هنا لك</span>
+                </h2>
+                <p data-aos="fade-up" data-aos-delay="200"
+                    class="text-white/60 max-w-xl mx-auto font-medium text-base md:text-lg"
+                    data-ar="تواصل معنا الآن للحصول على استشارة مجانية وتسعيرة فورية لخدماتنا."
+                    data-en="Contact us now for a free consultation and instant quote for our services.">
+                    تواصل معنا الآن للحصول على استشارة مجانية وتسعيرة فورية لخدماتنا.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div data-aos="zoom-in" data-aos-delay="0"
+                    class="group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-lime-500/40 rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-2">
+                    <div
+                        class="w-14 h-14 bg-lime-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-lime-500/30 transition-colors">
+                        <i class="fab fa-whatsapp text-2xl text-lime-400"></i>
+                    </div>
+                    <h3 class="text-white font-black text-lg mb-2" data-ar="واتساب" data-en="WhatsApp">واتساب</h3>
+                    <a href="https://wa.me/971588205679" target="_blank" rel="noopener"
+                        class="text-lime-400 font-bold hover:text-lime-300 transition-colors text-base" dir="ltr">058
+                        820 5679</a>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="100"
+                    class="group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-lime-500/40 rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-2">
+                    <div
+                        class="w-14 h-14 bg-lime-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-lime-500/30 transition-colors">
+                        <i class="fas fa-envelope text-2xl text-lime-400"></i>
+                    </div>
+                    <h3 class="text-white font-black text-lg mb-2" data-ar="البريد الإلكتروني" data-en="Email">البريد
+                        الإلكتروني</h3>
+                    <a href="mailto:info@alwissam.net"
+                        class="text-lime-400 font-bold hover:text-lime-300 transition-colors text-base">info@alwissam.net</a>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="200"
+                    class="group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-lime-500/40 rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-2">
+                    <div
+                        class="w-14 h-14 bg-lime-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-lime-500/30 transition-colors">
+                        <i class="fas fa-phone text-2xl text-lime-400"></i>
+                    </div>
+                    <h3 class="text-white font-black text-lg mb-2" data-ar="اتصل بنا" data-en="Call Us">اتصل بنا</h3>
+                    <a href="tel:+971588205679"
+                        class="text-lime-400 font-bold hover:text-lime-300 transition-colors text-base" dir="ltr">+971
+                        58 820 5679</a>
+                </div>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="300" class="text-center">
+                <a href="https://wa.me/971588205679" target="_blank" rel="noopener"
+                    class="inline-flex items-center gap-3 bg-lime-500 hover:bg-lime-600 text-white font-black py-5 px-10 rounded-2xl text-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-lime-500/40"
+                    data-ar="تحدث معنا الآن على واتساب" data-en="Chat With Us on WhatsApp">
+                    <i class="fab fa-whatsapp text-2xl"></i>
+                    تحدث معنا الآن على واتساب
+                    <i class="fas fa-arrow-left" id="footer-cta-arrow"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ TRUST BADGES ═══════════════════════ -->
+    <section class="bg-white py-10 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p data-aos="fade-up" class="text-center text-gray-400 font-semibold text-sm mb-8 tracking-widest uppercase"
+                data-ar="معتمدون رسمياً لدى" data-en="Officially Accredited With">معتمدون رسمياً لدى</p>
+            <div class="flex flex-wrap items-center justify-center gap-6 md:gap-12">
+                <div data-aos="zoom-in" data-aos-delay="0"
+                    class="flex flex-col items-center gap-2 px-6 py-4 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-teal-200 transition-all duration-300">
+                    <i class="fas fa-landmark text-3xl text-teal-700"></i>
+                    <span class="text-gray-600 text-xs font-bold text-center" data-ar="وزارة الخارجية"
+                        data-en="Ministry of Foreign Affairs">وزارة الخارجية</span>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="80"
+                    class="flex flex-col items-center gap-2 px-6 py-4 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-teal-200 transition-all duration-300">
+                    <i class="fas fa-balance-scale text-3xl text-teal-700"></i>
+                    <span class="text-gray-600 text-xs font-bold text-center" data-ar="وزارة العدل"
+                        data-en="Ministry of Justice">وزارة العدل</span>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="160"
+                    class="flex flex-col items-center gap-2 px-6 py-4 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-teal-200 transition-all duration-300">
+                    <i class="fas fa-university text-3xl text-teal-700"></i>
+                    <span class="text-gray-600 text-xs font-bold text-center" data-ar="وزارة التربية والتعليم"
+                        data-en="Ministry of Education">وزارة التربية والتعليم</span>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="240"
+                    class="flex flex-col items-center gap-2 px-6 py-4 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-teal-200 transition-all duration-300">
+                    <i class="fas fa-flag text-3xl text-teal-700"></i>
+                    <span class="text-gray-600 text-xs font-bold text-center" data-ar="السفارات المعتمدة"
+                        data-en="Certified Embassies">السفارات المعتمدة</span>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="320"
+                    class="flex flex-col items-center gap-2 px-6 py-4 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-teal-200 transition-all duration-300">
+                    <i class="fas fa-shield-alt text-3xl text-teal-700"></i>
+                    <span class="text-gray-600 text-xs font-bold text-center" data-ar="الجهات الحكومية الإماراتية"
+                        data-en="UAE Government Entities">الجهات الحكومية الإماراتية</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ HOW WE WORK ═══════════════════════ -->
+    <section class="bg-gray-50 py-16 md:py-24 section-py">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div data-aos="fade-down"
+                    class="inline-flex items-center gap-2 bg-lime-500/10 text-lime-600 font-bold text-sm px-4 py-2 rounded-full mb-4 border border-lime-500/20">
+                    <i class="fas fa-cogs"></i>
+                    <span data-ar="كيف نعمل" data-en="How It Works">كيف نعمل</span>
+                </div>
+                <h2 data-aos="fade-up" data-aos-delay="100"
+                    class="text-3xl sm:text-4xl md:text-5xl font-black text-teal-900 mb-4">
+                    <span data-ar="3 خطوات " data-en="3 Simple ">3 خطوات </span>
+                    <span class="text-lime-500" data-ar="بسيطة وسريعة" data-en="Steps">بسيطة وسريعة</span>
+                </h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                <!-- connector line desktop -->
+                <div
+                    class="hidden md:block absolute top-12 left-1/4 right-1/4 h-0.5 bg-gradient-to-r from-lime-400 to-teal-500 z-0">
+                </div>
+
+                <!-- Step 1 -->
+                <div data-aos="fade-up" data-aos-delay="0" class="relative z-10 flex flex-col items-center text-center">
+                    <div
+                        class="w-24 h-24 bg-teal-900 rounded-3xl flex items-center justify-center mb-6 shadow-xl shadow-teal-900/20 hover:scale-105 transition-transform duration-300">
+                        <i class="fab fa-whatsapp text-4xl text-lime-400"></i>
+                    </div>
+                    <div
+                        class="absolute -top-3 -right-3 w-8 h-8 bg-lime-500 rounded-full flex items-center justify-center text-white font-black text-sm shadow-lg">
+                        1</div>
+                    <h3 class="text-teal-900 font-black text-xl mb-3" data-ar="تواصل معنا" data-en="Contact Us">تواصل
+                        معنا</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed"
+                        data-ar="تواصل معنا عبر واتساب أو الهاتف وأخبرنا بنوع الوثيقة واللغة المطلوبة."
+                        data-en="Reach out via WhatsApp or phone and tell us the document type and language needed.">
+                        تواصل معنا عبر واتساب أو الهاتف وأخبرنا بنوع الوثيقة واللغة المطلوبة.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div data-aos="fade-up" data-aos-delay="150"
+                    class="relative z-10 flex flex-col items-center text-center">
+                    <div
+                        class="w-24 h-24 bg-teal-900 rounded-3xl flex items-center justify-center mb-6 shadow-xl shadow-teal-900/20 hover:scale-105 transition-transform duration-300">
+                        <i class="fas fa-file-upload text-4xl text-lime-400"></i>
+                    </div>
+                    <div
+                        class="absolute -top-3 -right-3 w-8 h-8 bg-lime-500 rounded-full flex items-center justify-center text-white font-black text-sm shadow-lg">
+                        2</div>
+                    <h3 class="text-teal-900 font-black text-xl mb-3" data-ar="أرسل مستنداتك"
+                        data-en="Send Your Documents">أرسل مستنداتك</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed"
+                        data-ar="أرسل صورة أو نسخة من المستند، وسنقدم لك سعراً فورياً ومدة التنفيذ."
+                        data-en="Send a photo or copy of your document and we'll give you an instant quote and turnaround time.">
+                        أرسل صورة أو نسخة من المستند، وسنقدم لك سعراً فورياً ومدة التنفيذ.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div data-aos="fade-up" data-aos-delay="300"
+                    class="relative z-10 flex flex-col items-center text-center">
+                    <div
+                        class="w-24 h-24 bg-teal-900 rounded-3xl flex items-center justify-center mb-6 shadow-xl shadow-teal-900/20 hover:scale-105 transition-transform duration-300">
+                        <i class="fas fa-certificate text-4xl text-lime-400"></i>
+                    </div>
+                    <div
+                        class="absolute -top-3 -right-3 w-8 h-8 bg-lime-500 rounded-full flex items-center justify-center text-white font-black text-sm shadow-lg">
+                        3</div>
+                    <h3 class="text-teal-900 font-black text-xl mb-3" data-ar="استلم ترجمتك المعتمدة"
+                        data-en="Receive Your Translation">استلم ترجمتك المعتمدة</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed"
+                        data-ar="استلم وثيقتك المترجمة بختم رسمي معتمد جاهزة للاستخدام الفوري."
+                        data-en="Receive your translated document with an official certified stamp, ready for immediate use.">
+                        استلم وثيقتك المترجمة بختم رسمي معتمد جاهزة للاستخدام الفوري.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ TESTIMONIALS ═══════════════════════ -->
+    <section class="bg-white py-16 md:py-24 section-py">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div data-aos="fade-down"
+                    class="inline-flex items-center gap-2 bg-lime-500/10 text-lime-600 font-bold text-sm px-4 py-2 rounded-full mb-4 border border-lime-500/20">
+                    <i class="fas fa-star"></i>
+                    <span data-ar="آراء عملاؤنا" data-en="Client Reviews">آراء عملاؤنا</span>
+                </div>
+                <h2 data-aos="fade-up" data-aos-delay="100"
+                    class="text-3xl sm:text-4xl md:text-5xl font-black text-teal-900 mb-4">
+                    <span data-ar="ماذا يقول " data-en="What Our ">ماذا يقول </span>
+                    <span class="text-lime-500" data-ar="عملاؤنا" data-en="Clients Say">عملاؤنا</span>
+                </h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                <!-- Review 1 -->
+                <div data-aos="fade-up" data-aos-delay="0"
+                    class="bg-white border border-gray-100 rounded-3xl p-7 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative">
+                    <div class="flex text-lime-400 gap-1 mb-4 text-lg">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <i class="fas fa-quote-right text-lime-500/20 text-5xl absolute top-6 left-6"></i>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-5 relative z-10"
+                        data-ar='"خدمة احترافية جداً، حصلت على ترجمة جواز سفري في نفس اليوم بختم رسمي. أنصح بالتعامل معهم بشدة."'
+                        data-en='"Extremely professional service. Got my passport translation the same day with an official stamp. Highly recommended!"'>
+                        "خدمة احترافية جداً، حصلت على ترجمة جواز سفري في نفس اليوم بختم رسمي. أنصح بالتعامل معهم بشدة."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-11 h-11 bg-teal-900 rounded-full flex items-center justify-center text-white font-black text-lg">
+                            م</div>
+                        <div>
+                            <div class="font-black text-teal-900 text-sm" data-ar="محمد العلي"
+                                data-en="Mohammed Al Ali">محمد العلي</div>
+                            <div class="text-gray-400 text-xs" data-ar="دبي، الإمارات" data-en="Dubai, UAE">دبي،
+                                الإمارات</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div data-aos="fade-up" data-aos-delay="100"
+                    class="bg-teal-900 border border-teal-800 rounded-3xl p-7 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative">
+                    <div class="flex text-lime-400 gap-1 mb-4 text-lg">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <i class="fas fa-quote-right text-lime-500/20 text-5xl absolute top-6 left-6"></i>
+                    <p class="text-white/80 text-sm leading-relaxed mb-5 relative z-10"
+                        data-ar='"ساعدونا في تأسيس شركتنا من الألف للياء، تعامل راقي وأسعار معقولة جداً مقارنة بالسوق."'
+                        data-en='"They helped us set up our company from A to Z. Professional service and very reasonable prices compared to the market."'>
+                        "ساعدونا في تأسيس شركتنا من الألف للياء، تعامل راقي وأسعار معقولة جداً مقارنة بالسوق."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-11 h-11 bg-lime-500 rounded-full flex items-center justify-center text-white font-black text-lg">
+                            س</div>
+                        <div>
+                            <div class="font-black text-white text-sm" data-ar="سارة الشامسي" data-en="Sara Al Shamsi">
+                                سارة الشامسي</div>
+                            <div class="text-white/50 text-xs" data-ar="أبوظبي، الإمارات" data-en="Abu Dhabi, UAE">
+                                أبوظبي، الإمارات</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div data-aos="fade-up" data-aos-delay="200"
+                    class="bg-white border border-gray-100 rounded-3xl p-7 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative">
+                    <div class="flex text-lime-400 gap-1 mb-4 text-lg">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <i class="fas fa-quote-right text-lime-500/20 text-5xl absolute top-6 left-6"></i>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-5 relative z-10"
+                        data-ar='"تعاملت معهم لترجمة وثائق التأشيرة والشهادات الدراسية. دقة عالية وسرعة في التسليم. ممتازون!"'
+                        data-en='"I dealt with them for visa document and academic certificate translations. High accuracy and fast delivery. Excellent!"'>
+                        "تعاملت معهم لترجمة وثائق التأشيرة والشهادات الدراسية. دقة عالية وسرعة في التسليم. ممتازون!"
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-11 h-11 bg-teal-900 rounded-full flex items-center justify-center text-white font-black text-lg">
+                            أ</div>
+                        <div>
+                            <div class="font-black text-teal-900 text-sm" data-ar="أحمد الزهراني"
+                                data-en="Ahmed Al Zahrani">أحمد الزهراني</div>
+                            <div class="text-gray-400 text-xs" data-ar="الشارقة، الإمارات" data-en="Sharjah, UAE">
+                                الشارقة، الإمارات</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Google rating badge -->
+            <div data-aos="fade-up" data-aos-delay="300" class="flex justify-center mt-10">
+                <div
+                    class="inline-flex items-center gap-3 bg-gray-50 border border-gray-200 rounded-2xl px-6 py-4 shadow-sm">
+                    <i class="fab fa-google text-2xl text-red-500"></i>
+                    <div>
+                        <div class="flex items-center gap-1">
+                            <span class="font-black text-teal-900 text-lg">4.9</span>
+                            <div class="flex text-yellow-400 text-sm gap-0.5">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                        <div class="text-gray-400 text-xs font-medium" data-ar="تقييم Google — +200 تقييم"
+                            data-en="Google Rating — 200+ Reviews">تقييم Google — +200 تقييم</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ QUICK QUOTE FORM ═══════════════════════ -->
+    <section class="bg-teal-950 py-16 md:py-24 section-py relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-0 left-1/3 w-80 h-80 bg-lime-500/8 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-1/3 w-80 h-80 bg-teal-700/20 rounded-full blur-3xl"></div>
+        </div>
+        <div class="relative z-10 max-w-2xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10">
+                <div data-aos="fade-down"
+                    class="inline-flex items-center gap-2 bg-lime-500/20 text-lime-400 font-bold text-sm px-4 py-2 rounded-full mb-4 border border-lime-500/30">
+                    <i class="fas fa-bolt"></i>
+                    <span data-ar="احصل على سعر فوري" data-en="Get Instant Quote">احصل على سعر فوري</span>
+                </div>
+                <h2 data-aos="fade-up" data-aos-delay="100" class="text-3xl sm:text-4xl font-black text-white mb-3">
+                    <span data-ar="أرسل طلبك " data-en="Send Your ">أرسل طلبك </span>
+                    <span class="text-lime-400" data-ar="الآن" data-en="Request Now">الآن</span>
+                </h2>
+                <p data-aos="fade-up" data-aos-delay="150" class="text-white/50 text-sm font-medium"
+                    data-ar="سيصلك الرد فورياً على واتساب" data-en="You'll receive an instant reply on WhatsApp">
+                    سيصلك الرد فورياً على واتساب
+                </p>
+            </div>
+
+            <form data-aos="fade-up" data-aos-delay="200" id="quote-form"
+                class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 md:p-8 flex flex-col gap-4">
+
+                <!-- Name -->
+                <div class="flex flex-col gap-1.5">
+                    <label class="text-white/70 text-sm font-semibold" data-ar="الاسم الكريم" data-en="Full Name">الاسم
+                        الكريم</label>
+                    <input id="q-name" type="text" placeholder="مثال: محمد العلي"
+                        class="w-full bg-white/8 border border-white/15 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-lime-500/60 focus:bg-white/12 transition-all text-sm"
+                        required />
+                </div>
+
+                <!-- Document type -->
+                <div class="flex flex-col gap-1.5">
+                    <label class="text-white/70 text-sm font-semibold" data-ar="نوع الوثيقة" data-en="Document Type">نوع
+                        الوثيقة</label>
+                    <select id="q-doc"
+                        class="w-full bg-teal-900 border border-white/15 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-lime-500/60 transition-all text-sm appearance-none cursor-pointer">
+                        <option value="" data-ar="اختر نوع الوثيقة..." data-en="Select document type...">اختر نوع
+                            الوثيقة...</option>
+                        <option value="جواز سفر" data-ar="جواز سفر" data-en="Passport">جواز سفر</option>
+                        <option value="رخصة قيادة" data-ar="رخصة قيادة" data-en="Driving License">رخصة قيادة</option>
+                        <option value="شهادة دراسية" data-ar="شهادة دراسية" data-en="Educational Certificate">شهادة
+                            دراسية</option>
+                        <option value="عقد" data-ar="عقد" data-en="Contract">عقد</option>
+                        <option value="وثيقة قانونية" data-ar="وثيقة قانونية" data-en="Legal Document">وثيقة قانونية
+                        </option>
+                        <option value="أخرى" data-ar="أخرى" data-en="Other">أخرى</option>
+                    </select>
+                </div>
+
+                <!-- Language pair -->
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="flex flex-col gap-1.5">
+                        <label class="text-white/70 text-sm font-semibold" data-ar="من لغة" data-en="From Language">من
+                            لغة</label>
+                        <select id="q-from"
+                            class="w-full bg-teal-900 border border-white/15 rounded-xl px-3 py-3 text-white focus:outline-none focus:border-lime-500/60 transition-all text-sm cursor-pointer">
+                            <option data-ar="العربية" data-en="Arabic">العربية</option>
+                            <option data-ar="الإنجليزية" data-en="English">الإنجليزية</option>
+                            <option data-ar="الفرنسية" data-en="French">الفرنسية</option>
+                            <option data-ar="أخرى" data-en="Other">أخرى</option>
+                        </select>
+                    </div>
+                    <div class="flex flex-col gap-1.5">
+                        <label class="text-white/70 text-sm font-semibold" data-ar="إلى لغة" data-en="To Language">إلى
+                            لغة</label>
+                        <select id="q-to"
+                            class="w-full bg-teal-900 border border-white/15 rounded-xl px-3 py-3 text-white focus:outline-none focus:border-lime-500/60 transition-all text-sm cursor-pointer">
+                            <option data-ar="الإنجليزية" data-en="English">الإنجليزية</option>
+                            <option data-ar="العربية" data-en="Arabic">العربية</option>
+                            <option data-ar="الفرنسية" data-en="French">الفرنسية</option>
+                            <option data-ar="أخرى" data-en="Other">أخرى</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Urgency -->
+                <div class="flex flex-col gap-2">
+                    <label class="text-white/70 text-sm font-semibold" data-ar="الأولوية"
+                        data-en="Priority">الأولوية</label>
+                    <div class="grid grid-cols-2 gap-3">
+                        <label
+                            class="flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl px-4 py-3 cursor-pointer hover:border-lime-500/40 transition-colors has-[:checked]:border-lime-500/60 has-[:checked]:bg-lime-500/10">
+                            <input type="radio" name="urgency" value="عادي" class="accent-lime-500" checked />
+                            <span class="text-white text-sm font-semibold" data-ar="⏳ عاديّ (2-3 أيام)"
+                                data-en="⏳ Normal (2-3 days)">⏳ عاديّ (2-3 أيام)</span>
+                        </label>
+                        <label
+                            class="flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl px-4 py-3 cursor-pointer hover:border-lime-500/40 transition-colors has-[:checked]:border-lime-500/60 has-[:checked]:bg-lime-500/10">
+                            <input type="radio" name="urgency" value="عاجل" class="accent-lime-500" />
+                            <span class="text-white text-sm font-semibold" data-ar="⚡ عاجل (نفس اليوم)"
+                                data-en="⚡ Urgent (Same Day)">⚡ عاجل (نفس اليوم)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Submit -->
+                <button type="submit" id="quote-submit"
+                    class="group w-full bg-lime-500 hover:bg-lime-400 active:bg-lime-600 text-white font-black py-4 rounded-2xl flex items-center justify-center gap-3 text-base transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-lime-500/30 mt-2">
+                    <i class="fab fa-whatsapp text-xl"></i>
+                    <span data-ar="أرسل طلبي على واتساب" data-en="Send My Request on WhatsApp">أرسل طلبي على
+                        واتساب</span>
+                    <i class="fas fa-arrow-left group-hover:-translate-x-1 transition-transform duration-300"
+                        id="quote-arrow"></i>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ PRICE CALCULATOR ═══════════════════════ -->
+    <section id="calculator" class="bg-teal-950 py-16 md:py-24 section-py relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-0 right-1/4 w-80 h-80 bg-lime-500/6 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 left-1/4 w-80 h-80 bg-teal-700/20 rounded-full blur-3xl"></div>
+        </div>
+        <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10">
+                <div data-aos="fade-down"
+                    class="inline-flex items-center gap-2 bg-lime-500/20 text-lime-400 font-bold text-sm px-4 py-2 rounded-full mb-4 border border-lime-500/30">
+                    <i class="fas fa-calculator"></i>
+                    <span data-ar="احسب تكلفتك الآن" data-en="Calculate Your Cost">احسب تكلفتك الآن</span>
+                </div>
+                <h2 data-aos="fade-up" data-aos-delay="100" class="text-3xl sm:text-4xl font-black text-white mb-3">
+                    <span data-ar="حاسبة " data-en="Instant ">حاسبة </span>
+                    <span class="text-lime-400" data-ar="التسعير الفوري" data-en="Price Calculator">التسعير
+                        الفوري</span>
+                </h2>
+                <p data-aos="fade-up" data-aos-delay="150" class="text-white/50 text-sm"
+                    data-ar="سعر تقريبي في ثوانٍ — التسعير النهائي يُحدَّد بعد مراجعة الوثيقة"
+                    data-en="Estimated price in seconds — final price confirmed after document review">سعر تقريبي في
+                    ثوانٍ — التسعير النهائي يُحدَّد بعد مراجعة الوثيقة</p>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="200"
+                class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 md:p-8">
+                <!-- Step 1: Service Type -->
+                <div class="mb-6">
+                    <label class="text-white/60 text-xs font-bold uppercase tracking-widest mb-3 block"
+                        data-ar="١. نوع الخدمة" data-en="1. Service Type">١. نوع الخدمة</label>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                        <div class="calc-option"><input type="radio" name="calc-svc" id="cs1" value="150" checked><label
+                                class="calc-opt-label" for="cs1"><i class="fas fa-file-alt text-lime-400"></i><span
+                                    data-ar="ترجمة وثيقة" data-en="Document Transl.">ترجمة وثيقة</span></label></div>
+                        <div class="calc-option"><input type="radio" name="calc-svc" id="cs2" value="80"><label
+                                class="calc-opt-label" for="cs2"><i class="fas fa-id-card text-lime-400"></i><span
+                                    data-ar="رخصة قيادة" data-en="Driving License">رخصة قيادة</span></label></div>
+                        <div class="calc-option"><input type="radio" name="calc-svc" id="cs3" value="200"><label
+                                class="calc-opt-label" for="cs3"><i class="fas fa-file-contract text-lime-400"></i><span
+                                    data-ar="توثيق عقد" data-en="Contract Attest.">توثيق عقد</span></label></div>
+                        <div class="calc-option"><input type="radio" name="calc-svc" id="cs4" value="300"><label
+                                class="calc-opt-label" for="cs4"><i class="fas fa-building text-lime-400"></i><span
+                                    data-ar="تأسيس شركة" data-en="Company Formation">تأسيس شركة</span></label></div>
+                        <div class="calc-option"><input type="radio" name="calc-svc" id="cs5" value="120"><label
+                                class="calc-opt-label" for="cs5"><i
+                                    class="fas fa-graduation-cap text-lime-400"></i><span data-ar="شهادات دراسية"
+                                    data-en="Educational Cert.">شهادات دراسية</span></label></div>
+                        <div class="calc-option"><input type="radio" name="calc-svc" id="cs6" value="250"><label
+                                class="calc-opt-label" for="cs6"><i class="fas fa-stamp text-lime-400"></i><span
+                                    data-ar="توثيق خارجية" data-en="MOFA Attestation">توثيق خارجية</span></label></div>
+                    </div>
+                </div>
+                <!-- Step 2: Pages -->
+                <div class="mb-6">
+                    <label class="text-white/60 text-xs font-bold uppercase tracking-widest mb-3 block"
+                        data-ar="٢. عدد الصفحات" data-en="2. Number of Pages">٢. عدد الصفحات</label>
+                    <div class="flex items-center gap-4">
+                        <button id="pages-minus" type="button"
+                            class="w-10 h-10 rounded-xl bg-white/10 hover:bg-lime-500/20 text-white font-black text-xl transition-colors flex items-center justify-center">−</button>
+                        <span id="pages-count" class="text-white font-black text-2xl min-w-[2ch] text-center">1</span>
+                        <button id="pages-plus" type="button"
+                            class="w-10 h-10 rounded-xl bg-white/10 hover:bg-lime-500/20 text-white font-black text-xl transition-colors flex items-center justify-center">+</button>
+                        <div class="h-2 flex-1 bg-white/10 rounded-full overflow-hidden">
+                            <div id="pages-bar" class="h-full bg-lime-500 rounded-full transition-all duration-300"
+                                style="width:5%"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Step 3: Urgency -->
+                <div class="mb-8">
+                    <label class="text-white/60 text-xs font-bold uppercase tracking-widest mb-3 block"
+                        data-ar="٣. الأولوية" data-en="3. Priority">٣. الأولوية</label>
+                    <div class="grid grid-cols-2 gap-2">
+                        <div class="calc-option"><input type="radio" name="calc-urg" id="cu1" value="1" checked><label
+                                class="calc-opt-label" for="cu1"><i class="fas fa-clock text-lime-400"></i><span
+                                    data-ar="⏳ عاديّ (2-3 أيام)" data-en="⏳ Normal (2-3 days)">⏳ عاديّ</span></label>
+                        </div>
+                        <div class="calc-option"><input type="radio" name="calc-urg" id="cu2" value="1.5"><label
+                                class="calc-opt-label" for="cu2"><i class="fas fa-bolt text-yellow-400"></i><span
+                                    data-ar="⚡ عاجل +50%" data-en="⚡ Urgent +50%">⚡ عاجل +50%</span></label></div>
+                    </div>
+                </div>
+                <!-- Result -->
+                <div id="price-result"
+                    class="bg-gradient-to-br from-teal-900 to-teal-800 border border-lime-500/30 rounded-2xl p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div>
+                        <div class="text-white/50 text-xs font-semibold mb-1" data-ar="السعر التقديري"
+                            data-en="Estimated Price">السعر التقديري</div>
+                        <div class="flex items-end gap-2">
+                            <span id="calc-price" class="text-lime-400 font-black text-4xl">150</span>
+                            <span class="text-white/60 font-bold text-base mb-1">AED</span>
+                        </div>
+                        <div class="text-white/40 text-xs mt-1" data-ar="* سعر تقريبي قابل للتغيير"
+                            data-en="* Approximate, subject to change">* سعر تقريبي قابل للتغيير</div>
+                    </div>
+                    <a id="calc-wa-btn" href="#" target="_blank" rel="noopener"
+                        class="bg-lime-500 hover:bg-lime-400 text-white font-black py-3 px-6 rounded-xl flex items-center gap-2 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-lime-500/30 text-sm whitespace-nowrap">
+                        <i class="fab fa-whatsapp text-lg"></i>
+                        <span data-ar="احجز بهذا السعر" data-en="Book at This Price">احجز بهذا السعر</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ FILE UPLOAD ═══════════════════════ -->
+    <section id="upload" class="bg-gray-50 py-16 md:py-24 section-py">
+        <div class="max-w-2xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10">
+                <div data-aos="fade-down"
+                    class="inline-flex items-center gap-2 bg-lime-500/10 text-lime-600 font-bold text-sm px-4 py-2 rounded-full mb-4 border border-lime-500/20">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <span data-ar="أرسل مستنداتك" data-en="Upload Your Documents">أرسل مستنداتك</span>
+                </div>
+                <h2 data-aos="fade-up" data-aos-delay="100" class="text-3xl sm:text-4xl font-black text-teal-900 mb-3">
+                    <span data-ar="ارفع وثيقتك " data-en="Upload Your ">ارفع وثيقتك </span>
+                    <span class="text-lime-500" data-ar="وانتظر ردنا" data-en="Document Now">وانتظر ردنا</span>
+                </h2>
+                <p data-aos="fade-up" data-aos-delay="150" class="text-gray-500 text-sm"
+                    data-ar="ارفع الملف ثم سنرسل لك عبر واتساب السعر ومدة التنفيذ خلال دقائق"
+                    data-en="Upload the file and we'll send price and timeline via WhatsApp within minutes">ارفع الملف
+                    ثم سنرسل لك عبر واتساب السعر ومدة التنفيذ خلال دقائق</p>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="200"
+                class="bg-white rounded-3xl shadow-xl border border-gray-100 p-6 md:p-8">
+                <!-- Dropzone -->
+                <div class="upload-dropzone mb-5" id="dropzone" onclick="document.getElementById('file-input').click()">
+                    <input type="file" id="file-input" accept="image/*,.pdf,.doc,.docx" class="hidden" multiple>
+                    <div id="drop-content">
+                        <i class="fas fa-cloud-upload-alt text-4xl text-teal-300 mb-3 block"></i>
+                        <p class="text-teal-900 font-bold text-sm mb-1" data-ar="اسحب الملف هنا أو اضغط للاختيار"
+                            data-en="Drag file here or click to choose">اسحب الملف هنا أو اضغط للاختيار</p>
+                        <p class="text-gray-400 text-xs" data-ar="يقبل: صور، PDF، Word"
+                            data-en="Accepts: Images, PDF, Word">يقبل: صور، PDF، Word</p>
+                    </div>
+                    <div id="file-preview" class="hidden mt-2"></div>
+                </div>
+                <!-- Name & Phone -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="text-gray-600 text-sm font-bold mb-1.5 block" data-ar="الاسم"
+                            data-en="Name">الاسم</label>
+                        <input id="upload-name" type="text" placeholder="محمد العلي"
+                            class="w-full border border-gray-200 rounded-xl px-4 py-3 text-gray-800 text-sm focus:outline-none focus:border-teal-500 transition-colors placeholder-gray-300">
+                    </div>
+                    <div>
+                        <label class="text-gray-600 text-sm font-bold mb-1.5 block" data-ar="رقم الواتساب"
+                            data-en="WhatsApp Number">رقم الواتساب</label>
+                        <input id="upload-phone" type="tel" placeholder="+971 5X XXX XXXX" dir="ltr"
+                            class="w-full border border-gray-200 rounded-xl px-4 py-3 text-gray-800 text-sm focus:outline-none focus:border-teal-500 transition-colors placeholder-gray-300">
+                    </div>
+                </div>
+                <!-- Service -->
+                <div class="mb-5">
+                    <label class="text-gray-600 text-sm font-bold mb-1.5 block" data-ar="الخدمة المطلوبة"
+                        data-en="Required Service">الخدمة المطلوبة</label>
+                    <select id="upload-service"
+                        class="w-full border border-gray-200 rounded-xl px-4 py-3 text-gray-800 text-sm focus:outline-none focus:border-teal-500 transition-colors appearance-none cursor-pointer bg-white">
+                        <option>ترجمة قانونية معتمدة</option>
+                        <option>ترجمة رخصة قيادة</option>
+                        <option>توثيق وثيقة</option>
+                        <option>معادلة شهادة</option>
+                        <option>أخرى</option>
+                    </select>
+                </div>
+                <!-- Submit -->
+                <button type="button" id="upload-submit"
+                    class="group w-full bg-teal-900 hover:bg-teal-800 text-white font-black py-4 rounded-2xl flex items-center justify-center gap-3 text-base transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-teal-900/30">
+                    <i class="fab fa-whatsapp text-xl text-lime-400"></i>
+                    <span data-ar="أرسل وثيقتي عبر واتساب" data-en="Send My Document via WhatsApp">أرسل وثيقتي عبر
+                        واتساب</span>
+                    <i class="fas fa-arrow-left group-hover:-translate-x-1 transition-transform" id="upload-arrow"></i>
+                </button>
+                <p class="text-center text-gray-400 text-xs mt-3" data-ar="🔒 ملفاتك آمنة تماماً وسرية"
+                    data-en="🔒 Your files are completely secure and confidential">🔒 ملفاتك آمنة تماماً وسرية</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ FAQ ═══════════════════════ -->
+    <section class="bg-white py-16 md:py-24 section-py">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-14">
+                <div data-aos="fade-down"
+                    class="inline-flex items-center gap-2 bg-lime-500/10 text-lime-600 font-bold text-sm px-4 py-2 rounded-full mb-4 border border-lime-500/20">
+                    <i class="fas fa-question-circle"></i>
+                    <span data-ar="الأسئلة الشائعة" data-en="FAQ">الأسئلة الشائعة</span>
+                </div>
+                <h2 data-aos="fade-up" data-aos-delay="100"
+                    class="text-3xl sm:text-4xl md:text-5xl font-black text-teal-900 mb-4">
+                    <span data-ar="أسئلة " data-en="Common ">أسئلة </span>
+                    <span class="text-lime-500" data-ar="يسألها عملاؤنا" data-en="Questions">يسألها عملاؤنا</span>
+                </h2>
+            </div>
+
+            <div class="flex flex-col gap-3" id="faq-list">
+
+                <div class="faq-item border border-gray-100 rounded-2xl overflow-hidden shadow-sm">
+                    <button
+                        class="faq-btn w-full flex items-center justify-between gap-4 p-5 text-right bg-white hover:bg-gray-50 transition-colors"
+                        data-ar="كم تستغرق مدة الترجمة؟" data-en="How long does translation take?">
+                        <span class="font-black text-teal-900 text-sm md:text-base">كم تستغرق مدة الترجمة؟</span>
+                        <i
+                            class="fas fa-chevron-down text-lime-500 transition-transform duration-300 flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer hidden px-5 pb-5 bg-white">
+                        <p class="text-gray-500 text-sm leading-relaxed"
+                            data-ar="معظم الوثائق تنتهي في نفس اليوم أو خلال 24 ساعة. في حال الوثائق المعقدة، قد تستغرق 2-3 أيام عمل."
+                            data-en="Most documents are completed the same day or within 24 hours. Complex documents may take 2-3 business days.">
+                            معظم الوثائق تنتهي في نفس اليوم أو خلال 24 ساعة. في حال الوثائق المعقدة، قد تستغرق 2-3 أيام
+                            عمل.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item border border-gray-100 rounded-2xl overflow-hidden shadow-sm">
+                    <button
+                        class="faq-btn w-full flex items-center justify-between gap-4 p-5 text-right bg-white hover:bg-gray-50 transition-colors"
+                        data-ar="هل الترجمة معتمدة رسمياً؟" data-en="Is the translation officially certified?">
+                        <span class="font-black text-teal-900 text-sm md:text-base">هل الترجمة معتمدة رسمياً؟</span>
+                        <i
+                            class="fas fa-chevron-down text-lime-500 transition-transform duration-300 flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer hidden px-5 pb-5 bg-white">
+                        <p class="text-gray-500 text-sm leading-relaxed"
+                            data-ar="نعم، جميع ترجماتنا مزودة بختم رسمي معترف به لدى وزارة الخارجية والسفارات والجهات الحكومية في الإمارات."
+                            data-en="Yes, all our translations come with an official stamp recognized by the Ministry of Foreign Affairs, embassies, and UAE government entities.">
+                            نعم، جميع ترجماتنا مزودة بختم رسمي معترف به لدى وزارة الخارجية والسفارات والجهات الحكومية في
+                            الإمارات.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item border border-gray-100 rounded-2xl overflow-hidden shadow-sm">
+                    <button
+                        class="faq-btn w-full flex items-center justify-between gap-4 p-5 text-right bg-white hover:bg-gray-50 transition-colors"
+                        data-ar="ما هي اللغات المتاحة؟" data-en="What languages are available?">
+                        <span class="font-black text-teal-900 text-sm md:text-base">ما هي اللغات المتاحة؟</span>
+                        <i
+                            class="fas fa-chevron-down text-lime-500 transition-transform duration-300 flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer hidden px-5 pb-5 bg-white">
+                        <p class="text-gray-500 text-sm leading-relaxed"
+                            data-ar="نترجم إلى وفي أكثر من 50 لغة عالمية بما فيها: الإنجليزية، الفرنسية، الألمانية، الإسبانية، الروسية، الصينية، الأردية، الهندية وغيرها."
+                            data-en="We translate to and from 50+ world languages including English, French, German, Spanish, Russian, Chinese, Urdu, Hindi and many more.">
+                            نترجم إلى وفي أكثر من 50 لغة عالمية بما فيها: الإنجليزية، الفرنسية، الألمانية، الإسبانية،
+                            الروسية، الصينية، الأردية، الهندية وغيرها.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item border border-gray-100 rounded-2xl overflow-hidden shadow-sm">
+                    <button
+                        class="faq-btn w-full flex items-center justify-between gap-4 p-5 text-right bg-white hover:bg-gray-50 transition-colors"
+                        data-ar="كيف أرسل مستنداتي؟" data-en="How do I send my documents?">
+                        <span class="font-black text-teal-900 text-sm md:text-base">كيف أرسل مستنداتي؟</span>
+                        <i
+                            class="fas fa-chevron-down text-lime-500 transition-transform duration-300 flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer hidden px-5 pb-5 bg-white">
+                        <p class="text-gray-500 text-sm leading-relaxed"
+                            data-ar="يمكنك إرسال صورة واضحة للوثيقة عبر واتساب مباشرةً، أو الحضور شخصياً لمكتبنا في دبي."
+                            data-en="You can send a clear photo of your document directly via WhatsApp, or visit our office in Dubai in person.">
+                            يمكنك إرسال صورة واضحة للوثيقة عبر واتساب مباشرةً، أو الحضور شخصياً لمكتبنا في دبي.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item border border-gray-100 rounded-2xl overflow-hidden shadow-sm">
+                    <button
+                        class="faq-btn w-full flex items-center justify-between gap-4 p-5 text-right bg-white hover:bg-gray-50 transition-colors"
+                        data-ar="هل بياناتي آمنة ومحمية؟" data-en="Is my data safe and protected?">
+                        <span class="font-black text-teal-900 text-sm md:text-base">هل بياناتي آمنة ومحمية؟</span>
+                        <i
+                            class="fas fa-chevron-down text-lime-500 transition-transform duration-300 flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-answer hidden px-5 pb-5 bg-white">
+                        <p class="text-gray-500 text-sm leading-relaxed"
+                            data-ar="نعم، نلتزم بسياسة سرية تامة. جميع مستنداتك تُعامَل بأقصى درجات الخصوصية ولا تُشارك مع أي طرف ثالث."
+                            data-en="Yes, we maintain a strict confidentiality policy. All your documents are treated with the utmost privacy and are never shared with any third party.">
+                            نعم، نلتزم بسياسة سرية تامة. جميع مستنداتك تُعامَل بأقصى درجات الخصوصية ولا تُشارك مع أي طرف
+                            ثالث.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Links: Blog + Tracking -->
+    <section class="bg-teal-900 py-10">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <a href="blog.html"
+                    class="group flex items-center gap-5 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-lime-500/40 rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1">
+                    <div
+                        class="w-12 h-12 bg-lime-500/20 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-lime-500/30 transition-colors">
+                        <i class="fas fa-newspaper text-lime-400 text-xl"></i>
+                    </div>
+                    <div>
+                        <div class="text-white font-black text-base" data-ar="مدونة ونصائح" data-en="Blog &amp; Tips">
+                            مدونة ونصائح</div>
+                        <div class="text-white/50 text-sm" data-ar="مقالات مفيدة عن الترجمة في الإمارات"
+                            data-en="Useful articles about translation in UAE">مقالات مفيدة عن الترجمة في الإمارات</div>
+                    </div>
+                    <i
+                        class="fas fa-arrow-left text-lime-500/50 group-hover:text-lime-400 ms-auto transition-colors"></i>
+                </a>
+                <a href="tracking.html"
+                    class="group flex items-center gap-5 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-lime-500/40 rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1">
+                    <div
+                        class="w-12 h-12 bg-lime-500/20 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-lime-500/30 transition-colors">
+                        <i class="fas fa-search-location text-lime-400 text-xl"></i>
+                    </div>
+                    <div>
+                        <div class="text-white font-black text-base" data-ar="تتبع طلبك" data-en="Track Your Order">تتبع
+                            طلبك</div>
+                        <div class="text-white/50 text-sm" data-ar="اعرف حالة ترجمتك الآن"
+                            data-en="Check your translation status now">اعرف حالة ترجمتك الآن</div>
+                    </div>
+                    <i
+                        class="fas fa-arrow-left text-lime-500/50 group-hover:text-lime-400 ms-auto transition-colors"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+    <footer class="bg-teal-950 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+                class="flex flex-col md:flex-row items-center justify-between gap-8 mb-8 pb-8 border-b border-white/10">
+
+                <div data-aos="fade-right" class="flex flex-col items-center md:items-start gap-2">
+                    <img src="logo.png" alt="الوسام للترجمة القانونية" class="h-16 md:h-20 object-contain" />
+                    <p class="text-white/50 text-sm font-medium text-center md:text-right"
+                        data-ar="الوجهة المعتمدة للترجمة القانونية في الإمارات"
+                        data-en="The UAE's Trusted Legal Translation Destination">الوجهة المعتمدة للترجمة القانونية في
+                        الإمارات</p>
+                </div>
+
+                <div data-aos="fade-up" class="flex flex-col items-center gap-3 text-center">
+                    <a href="tel:+971588205679"
+                        class="flex items-center gap-2 text-white/70 hover:text-lime-400 transition-colors font-semibold"
+                        dir="ltr">
+                        <i class="fas fa-phone text-lime-500"></i>058 820 5679
+                    </a>
+                    <a href="mailto:info@alwissam.net"
+                        class="flex items-center gap-2 text-white/70 hover:text-lime-400 transition-colors font-semibold">
+                        <i class="fas fa-envelope text-lime-500"></i>info@alwissam.net
+                    </a>
+                </div>
+
+                <div data-aos="fade-left" class="flex items-center gap-3">
+                    <a href="https://wa.me/971588205679" target="_blank" rel="noopener"
+                        class="w-10 h-10 bg-white/5 hover:bg-green-500/20 border border-white/10 hover:border-green-500/50 rounded-xl flex items-center justify-center text-white/60 hover:text-green-400 transition-all duration-300 hover:-translate-y-1">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="mailto:info@alwissam.net"
+                        class="w-10 h-10 bg-white/5 hover:bg-lime-500/20 border border-white/10 hover:border-lime-500/50 rounded-xl flex items-center justify-center text-white/60 hover:text-lime-400 transition-all duration-300 hover:-translate-y-1">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <p id="footer-copy" class="text-white/40 text-sm font-medium"
+                    data-ar="© 2026 الوسام للترجمة القانونية. صُمم بواسطة Syb-Tech"
+                    data-en="© 2026 Al Wissam Legal Translation. Designed by Syb-Tech">
+                    © 2026 الوسام للترجمة القانونية. صُمم بواسطة <span class="text-lime-500 font-bold">Syb-Tech</span>.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <a id="wa-float" href="https://wa.me/971588205679" target="_blank" rel="noopener" aria-label="WhatsApp"
+        class="wa-pulse w-14 h-14 bg-green-500 hover:bg-green-600 active:bg-green-700 rounded-full flex items-center justify-center shadow-2xl shadow-green-500/50 transition-all duration-300 hover:scale-110 group relative">
+        <span id="wa-float-tooltip">تحدث معنا الآن!</span>
+        <i class="fab fa-whatsapp text-white text-3xl group-hover:scale-110 transition-transform"></i>
+        <span
+            class="absolute top-0 right-0 w-3.5 h-3.5 bg-red-500 rounded-full border-2 border-white animate-ping"></span>
+        <span class="absolute top-0 right-0 w-3.5 h-3.5 bg-red-500 rounded-full border-2 border-white"></span>
+    </a>
+
+    <!-- ═══════════════════════ SCRIPTS ═══════════════════════ -->
+    <script>
+        // ── AOS ──
+        AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true, offset: 60 });
+
+        // ── Navbar scroll ──
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('navbar-scrolled', window.scrollY > 50);
+        });
+
+        // ── Progress bar ──
+        const progressBar = document.getElementById('progress-bar');
+        window.addEventListener('scroll', () => {
+            const st = document.documentElement.scrollTop;
+            const sh = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            progressBar.style.width = ((st / sh) * 100) + '%';
+        });
+
+        // ── Mobile menu ──
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        let menuOpen = false;
+
+        function openMenu(state) {
+            menuOpen = state;
+            mobileMenu.classList.toggle('open', state);
+            menuIcon.className = state ? 'fas fa-times' : 'fas fa-bars';
+            menuBtn.setAttribute('aria-expanded', state);
+        }
+
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openMenu(!menuOpen);
+        });
+
+        // Close when any link inside menu is tapped
+        mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => openMenu(false)));
+
+        // Close when tapping outside
+        document.addEventListener('click', (e) => {
+            if (menuOpen && !mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+                openMenu(false);
+            }
+        });
+
+        // ── Smooth scroll ──
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', function (e) {
+                e.preventDefault();
+                const t = document.querySelector(this.getAttribute('href'));
+                if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // ══════════════════════════════════════════
+        //  BILINGUAL TOGGLE — Core Logic
+        // ══════════════════════════════════════════
+        let currentLang = 'ar';
+        const htmlRoot = document.getElementById('html-root');
+        const langBtn = document.getElementById('lang-btn');
+        const langBtnMob = document.getElementById('lang-btn-mobile');
+        const arrow = document.getElementById('footer-cta-arrow');
+
+        // All elements carrying data-ar / data-en (text swap via innerText)
+        // For elements with HTML content (headlines), we use innerHTML.
+        // ── SAFE HTML FRAGMENTS (hardcoded, never from user input) ──
+        // These two elements require innerHTML because they contain child elements.
+        // Content is 100% developer-controlled, no user data ever flows here.
+        const HTML_FRAGS = {
+            'hero-headline': {
+                ar: 'الوسام للترجمة القانونية..<br/><span class="text-lime-400">ثقتكم عبر اللغات والثقافات</span><br/><span class="text-2xl sm:text-3xl md:text-4xl font-bold text-white/80">منذ عام 1998</span>',
+                en: 'Al Wissam Legal Translation..<br/><span class="text-lime-400">Since 1998, our words have carried trust</span><br/><span class="text-2xl sm:text-3xl md:text-4xl font-bold text-white/80">across languages and cultures.</span>'
+            },
+            'footer-copy': {
+                ar: '© 2026 الوسام للترجمة القانونية. صُمم بواسطة <span class="text-lime-500 font-bold">Syb-Tech</span>.',
+                en: '© 2026 Al Wissam Legal Translation. Designed by <span class="text-lime-500 font-bold">Syb-Tech</span>.'
+            }
+        };
+
+        function applyLang(lang) {
+            currentLang = lang;
+            const isAr = lang === 'ar';
+
+            // 1. Direction + lang
+            htmlRoot.setAttribute('dir', isAr ? 'rtl' : 'ltr');
+            htmlRoot.setAttribute('lang', isAr ? 'ar' : 'en');
+
+            // 2. Toggle button labels
+            langBtn.textContent = isAr ? 'English' : 'العربية';
+            langBtnMob.textContent = isAr ? 'English' : 'العربية';
+
+            // 3. Arrow flip
+            if (arrow) arrow.className = isAr ? 'fas fa-arrow-left' : 'fas fa-arrow-right';
+
+            // 4. Safe textContent swap — NO innerHTML, NO user data
+            document.querySelectorAll('[data-ar][data-en]').forEach(el => {
+                const val = isAr ? el.dataset.ar : el.dataset.en;
+                if (val !== undefined) {
+                    el.textContent = val;
+                    // Set dir per-element so Arabic aligns right, English aligns left
+                    el.setAttribute('dir', isAr ? 'rtl' : 'ltr');
+                }
+            });
+
+            // 5. Controlled HTML fragments (developer-defined only, never user input)
+            Object.entries(HTML_FRAGS).forEach(([id, texts]) => {
+                const el = document.getElementById(id);
+                if (el) el.innerHTML = isAr ? texts.ar : texts.en; // safe: static strings
+            });
+        }
+
+        function toggleLang() { applyLang(currentLang === 'ar' ? 'en' : 'ar'); }
+
+        langBtn.addEventListener('click', toggleLang);
+        langBtnMob.addEventListener('click', toggleLang);
+
+        // ══════════════════════════════════════════
+        //  FAQ ACCORDION
+        // ══════════════════════════════════════════
+        document.querySelectorAll('.faq-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.closest('.faq-item');
+                const answer = item.querySelector('.faq-answer');
+                const icon = btn.querySelector('i');
+                const isOpen = !answer.classList.contains('hidden');
+
+                // Close all
+                document.querySelectorAll('.faq-item').forEach(i => {
+                    i.querySelector('.faq-answer').classList.add('hidden');
+                    i.querySelector('i').style.transform = '';
+                });
+
+                // Open clicked (if wasn't open)
+                if (!isOpen) {
+                    answer.classList.remove('hidden');
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+
+        // ══════════════════════════════════════════
+        //  QUICK QUOTE FORM → WhatsApp
+        // ══════════════════════════════════════════
+        document.getElementById('quote-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = document.getElementById('q-name').value.trim();
+            const doc = document.getElementById('q-doc').value;
+            const from = document.getElementById('q-from').value;
+            const to = document.getElementById('q-to').value;
+            const urgency = document.querySelector('input[name="urgency"]:checked').value;
+
+            if (!name || !doc) return;
+
+            const msg = `مرحباً، أود الاستفسار عن خدمة الترجمة:\n\n👤 الاسم: ${name}\n📄 نوع الوثيقة: ${doc}\n🌐 من: ${from} ← إلى: ${to}\n⚡ الأولوية: ${urgency}\n\nأرجو التواصل معي. شكراً!`;
+            const url = `https://wa.me/971588205679?text=${encodeURIComponent(msg)}`;
+            window.open(url, '_blank', 'noopener');
+        });
+
+        // ══ PRICE CALCULATOR ══
+        let calcPages = 1;
+        const calcPriceEl = document.getElementById('calc-price');
+        const calcWaBtn = document.getElementById('calc-wa-btn');
+
+        function getCalcPrice() {
+            const svc = parseFloat(document.querySelector('input[name="calc-svc"]:checked')?.value || 150);
+            const urg = parseFloat(document.querySelector('input[name="calc-urg"]:checked')?.value || 1);
+            return Math.round(svc * calcPages * urg);
+        }
+
+        function updateCalc() {
+            const price = getCalcPrice();
+            if (calcPriceEl) calcPriceEl.textContent = price;
+            const svcEl = document.querySelector('input[name="calc-svc"]:checked');
+            const svcLabel = svcEl ? svcEl.nextElementSibling?.querySelector('span')?.textContent?.trim() : 'ترجمة وثيقة';
+            const urgLabel = document.querySelector('input[name="calc-urg"]:checked')?.value === '1.5' ? 'عاجل' : 'عادي';
+            const waMsg = `مرحباً، أريد الاستفسار عن:\n\n📄 الخدمة: ${svcLabel}\n📑 عدد الصفحات: ${calcPages}\n⚡ الأولوية: ${urgLabel}\n💰 السعر التقديري: ${price} درهم\n\nأرجو التواصل. شكراً!`;
+            if (calcWaBtn) calcWaBtn.href = `https://wa.me/971588205679?text=${encodeURIComponent(waMsg)}`;
+            const pr = document.getElementById('price-result');
+            if (pr) { pr.style.transform = 'scale(1.02)'; setTimeout(() => pr.style.transform = 'scale(1)', 250); }
+        }
+
+        document.querySelectorAll('input[name="calc-svc"], input[name="calc-urg"]').forEach(r => r.addEventListener('change', updateCalc));
+        document.getElementById('pages-minus')?.addEventListener('click', () => { if (calcPages > 1) { calcPages--; updatePageUI(); updateCalc(); } });
+        document.getElementById('pages-plus')?.addEventListener('click', () => { if (calcPages < 20) { calcPages++; updatePageUI(); updateCalc(); } });
+
+        function updatePageUI() {
+            document.getElementById('pages-count').textContent = calcPages;
+            document.getElementById('pages-bar').style.width = (calcPages / 20 * 100) + '%';
+        }
+        updateCalc();
+
+        // ══ FILE UPLOAD → WhatsApp ══
+        const dropzone = document.getElementById('dropzone');
+        const fileInput = document.getElementById('file-input');
+        const filePreview = document.getElementById('file-preview');
+        const dropContent = document.getElementById('drop-content');
+        let selectedFiles = [];
+
+        if (dropzone) {
+            ['dragenter', 'dragover'].forEach(evName => dropzone.addEventListener(evName, e => { e.preventDefault(); dropzone.classList.add('drag-over'); }));
+            ['dragleave'].forEach(evName => dropzone.addEventListener(evName, e => { e.preventDefault(); dropzone.classList.remove('drag-over'); }));
+            dropzone.addEventListener('drop', e => { e.preventDefault(); dropzone.classList.remove('drag-over'); if (e.dataTransfer?.files?.length) handleFiles(e.dataTransfer.files); });
+        }
+        fileInput?.addEventListener('change', () => handleFiles(fileInput.files));
+
+        function handleFiles(files) {
+            selectedFiles = Array.from(files);
+            if (!selectedFiles.length) return;
+            dropContent?.classList.add('hidden');
+            filePreview?.classList.remove('hidden');
+            if (filePreview) filePreview.innerHTML = selectedFiles.map(f =>
+                `<div class="flex items-center gap-2 bg-teal-500/10 rounded-xl px-3 py-2 mt-2">
+                    <i class="fas fa-file-alt text-teal-600 text-sm"></i>
+                    <span class="text-teal-800 text-xs font-semibold truncate">${f.name}</span>
+                    <span class="text-gray-400 text-xs ms-auto">${(f.size / 1024).toFixed(0)} KB</span>
+                </div>`
+            ).join('');
+        }
+
+        document.getElementById('upload-submit')?.addEventListener('click', () => {
+            const name = document.getElementById('upload-name')?.value.trim();
+            const phone = document.getElementById('upload-phone')?.value.trim();
+            const svc = document.getElementById('upload-service')?.value || 'ترجمة';
+            if (!name || !phone) { alert('الرجاء إدخال الاسم ورقم الواتساب'); return; }
+            const fileNames = selectedFiles.map(f => f.name).join(', ') || 'لم يتم رفع ملف';
+            const msg = `مرحباً، أريد طلب خدمة:\n\n👤 الاسم: ${name}\n📱 التواصل: ${phone}\n🛠 الخدمة: ${svc}\n📎 الملفات: ${fileNames}\n\nأرجو التواصل معي. شكراً!`;
+            window.open(`https://wa.me/971588205679?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
+        });
+
+        // ══ PWA INSTALL BANNER ══
+        let deferredPrompt = null;
+        const pwaBanner = document.getElementById('pwa-banner');
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault(); deferredPrompt = e;
+            if (!sessionStorage.getItem('pwa-dismissed')) setTimeout(() => pwaBanner?.classList.remove('hidden'), 4000);
+        });
+        document.getElementById('pwa-install-btn')?.addEventListener('click', async () => {
+            if (deferredPrompt) { deferredPrompt.prompt(); await deferredPrompt.userChoice; deferredPrompt = null; }
+            pwaBanner?.classList.add('hidden');
+        });
+        document.getElementById('pwa-dismiss-btn')?.addEventListener('click', () => {
+            pwaBanner?.classList.add('hidden');
+            sessionStorage.setItem('pwa-dismissed', '1');
+        });
+
+    </script>
+
+</body>
+
+</html>

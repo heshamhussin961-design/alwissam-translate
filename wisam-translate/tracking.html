@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>تتبع طلبك | الوسام للترجمة القانونية</title>
+    <meta name="description" content="تتبع حالة طلب الترجمة الخاص بك لدى الوسام للترجمة القانونية في دبي، الإمارات.">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        crossorigin="anonymous">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { teal: { 950: '#042f2e', 900: '#064e3b', 800: '#065f46', 700: '#047857', 600: '#059669', 500: '#0f766e' }, lime: { 400: '#a3e635', 500: '#84cc16', 600: '#65a30d' } }, fontFamily: { cairo: ['Cairo', 'sans-serif'] } } } }</script>
+    <style>
+        * {
+            font-family: 'Cairo', sans-serif;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        body {
+            background: #042f2e;
+            min-height: 100vh;
+        }
+
+        /* timeline */
+        .step-dot {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .step-line {
+            width: 2px;
+            flex: 1;
+            min-height: 40px;
+            margin: 4px auto;
+        }
+
+        .step-active .step-dot {
+            background: #84cc16;
+            color: #042f2e;
+        }
+
+        .step-done .step-dot {
+            background: #065f46;
+            color: #84cc16;
+        }
+
+        .step-pending .step-dot {
+            background: rgba(255, 255, 255, 0.08);
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .step-active .step-line {
+            background: linear-gradient(to bottom, #84cc16, rgba(255, 255, 255, 0.1));
+        }
+
+        .step-done .step-line {
+            background: #065f46;
+        }
+
+        .step-pending .step-line {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        /* pulse glow for active */
+        @keyframes glow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(132, 204, 22, 0.5);
+            }
+
+            50% {
+                box-shadow: 0 0 0 10px rgba(132, 204, 22, 0);
+            }
+        }
+
+        .step-active .step-dot {
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        /* input */
+        .track-input:focus {
+            outline: none;
+            border-color: #84cc16;
+        }
+    </style>
+</head>
+
+<body class="text-white">
+
+    <!-- Navbar -->
+    <nav class="bg-teal-950/80 backdrop-blur-xl border-b border-white/10 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <a href="index.html">
+                <img src="logo.png" alt="الوسام للترجمة القانونية" class="h-10 object-contain">
+            </a>
+            <a href="index.html"
+                class="flex items-center gap-2 text-white/60 hover:text-lime-400 transition-colors text-sm font-semibold">
+                <i class="fas fa-arrow-right"></i>
+                <span>الرئيسية</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="py-16 px-4 text-center relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none">
+            <div
+                class="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-lime-500/8 rounded-full blur-3xl">
+            </div>
+        </div>
+        <div class="relative z-10">
+            <div
+                class="inline-flex items-center gap-2 bg-lime-500/20 text-lime-400 font-bold text-sm px-4 py-2 rounded-full mb-6 border border-lime-500/30">
+                <i class="fas fa-search-location"></i>
+                <span>تتبع طلبك</span>
+            </div>
+            <h1 class="text-3xl sm:text-4xl font-black text-white mb-3">
+                اعرف حالة <span class="text-lime-400">ترجمتك الآن</span>
+            </h1>
+            <p class="text-white/50 text-sm max-w-md mx-auto">أدخل رقم طلبك أو التحقق بواتساب لمعرفة الحالة الراهنة</p>
+        </div>
+    </section>
+
+    <!-- Search Box -->
+    <section class="max-w-lg mx-auto px-4 pb-10">
+        <div class="bg-white/5 border border-white/10 rounded-3xl p-6 backdrop-blur-sm">
+            <div class="flex flex-col gap-4">
+                <div>
+                    <label class="text-white/60 text-xs font-bold uppercase tracking-widest mb-2 block">رقم الطلب أو رقم
+                        الهاتف</label>
+                    <input id="track-input" type="text" placeholder="مثال: WS-2026-1234 أو +971XXXXXXXX" dir="ltr"
+                        class="track-input w-full bg-white/8 border border-white/15 rounded-xl px-4 py-3.5 text-white placeholder-white/25 transition-colors text-sm">
+                </div>
+                <button id="track-btn"
+                    class="w-full bg-lime-500 hover:bg-lime-400 active:bg-lime-600 text-white font-black py-4 rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-lime-500/30">
+                    <i class="fas fa-search"></i>
+                    <span>تتبع الطلب</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Demo Result (hidden by default) -->
+        <div id="track-result" class="hidden mt-6">
+            <div class="bg-white/5 border border-white/10 rounded-3xl p-6 backdrop-blur-sm">
+                <!-- Order header -->
+                <div class="flex items-center justify-between mb-6 pb-4 border-b border-white/10">
+                    <div>
+                        <div class="text-white/50 text-xs font-bold uppercase tracking-wide mb-1">رقم الطلب</div>
+                        <div id="result-order-num" class="text-lime-400 font-black text-lg"></div>
+                    </div>
+                    <div id="result-status-badge"
+                        class="bg-lime-500/20 text-lime-400 font-black text-sm px-4 py-2 rounded-full border border-lime-500/30">
+                        قيد التنفيذ
+                    </div>
+                </div>
+
+                <!-- Timeline -->
+                <div class="flex gap-4">
+                    <!-- Dots column -->
+                    <div class="flex flex-col items-center" style="width:44px">
+                        <div class="step-dot step-done"><i class="fas fa-check text-sm"></i></div>
+                        <div class="step-line step-done"></div>
+                        <div class="step-dot step-done"><i class="fas fa-check text-sm"></i></div>
+                        <div class="step-line step-active"></div>
+                        <div class="step-dot step-active"><i class="fas fa-pencil-alt text-sm"></i></div>
+                        <div class="step-line step-pending"></div>
+                        <div class="step-dot step-pending"><i class="fas fa-stamp text-sm"></i></div>
+                        <div class="step-line step-pending"></div>
+                        <div class="step-dot step-pending"><i class="fas fa-check-double text-sm"></i></div>
+                    </div>
+                    <!-- Labels column -->
+                    <div class="flex flex-col flex-1 gap-0">
+                        <div class="py-2">
+                            <div class="text-white font-black text-sm">✅ استلام الطلب</div>
+                            <div class="text-white/40 text-xs">تم استلام وثيقتك بنجاح</div>
+                        </div>
+                        <div style="height:40px"></div>
+                        <div class="py-2">
+                            <div class="text-white font-black text-sm">✅ مراجعة الوثيقة</div>
+                            <div class="text-white/40 text-xs">تمت المراجعة الأولية للمستند</div>
+                        </div>
+                        <div style="height:40px"></div>
+                        <div class="py-2">
+                            <div class="text-lime-400 font-black text-sm">⏳ الترجمة (جارية الآن)</div>
+                            <div class="text-white/40 text-xs">يعمل المترجم المتخصص على وثيقتك</div>
+                        </div>
+                        <div style="height:40px"></div>
+                        <div class="py-2">
+                            <div class="text-white/40 font-black text-sm">⭕ ختم الاعتماد</div>
+                            <div class="text-white/30 text-xs">في انتظار انتهاء الترجمة</div>
+                        </div>
+                        <div style="height:40px"></div>
+                        <div class="py-2">
+                            <div class="text-white/40 font-black text-sm">⭕ جاهز للاستلام</div>
+                            <div class="text-white/30 text-xs">سيتم إشعارك عبر واتساب</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ETA -->
+                <div class="mt-6 bg-teal-900/60 rounded-2xl p-4 flex items-center gap-3 border border-white/5">
+                    <i class="fas fa-clock text-lime-400 text-lg flex-shrink-0"></i>
+                    <div>
+                        <div class="text-white font-black text-sm">الموعد المتوقع للتسليم</div>
+                        <div id="eta-date" class="text-lime-400 font-bold text-sm"></div>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <a href="https://wa.me/971588205679" target="_blank" rel="noopener"
+                    class="mt-4 flex items-center justify-center gap-2 text-white/50 hover:text-lime-400 transition-colors text-sm font-semibold">
+                    <i class="fab fa-whatsapp"></i>
+                    سؤال عن طلبك؟ تواصل معنا
+                </a>
+            </div>
+        </div>
+
+        <!-- Not Found -->
+        <div id="track-notfound" class="hidden mt-6 bg-white/5 border border-red-500/20 rounded-3xl p-6 text-center">
+            <i class="fas fa-search text-red-400 text-3xl mb-3 block"></i>
+            <div class="text-white font-black mb-1">لم يُعثر على الطلب</div>
+            <div class="text-white/40 text-sm mb-4">تأكد من رقم الطلب أو الهاتف وحاول مجداً</div>
+            <a href="https://wa.me/971588205679" target="_blank" rel="noopener"
+                class="inline-flex items-center gap-2 bg-lime-500 hover:bg-lime-400 text-white font-black px-6 py-3 rounded-xl text-sm transition-colors">
+                <i class="fab fa-whatsapp"></i>
+                تواصل معنا للاستفسار
+            </a>
+        </div>
+
+        <!-- WhatsApp shortcut -->
+        <div class="mt-8 bg-white/5 border border-white/10 rounded-2xl p-5 flex items-center gap-4">
+            <div class="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                <i class="fab fa-whatsapp text-green-400 text-xl"></i>
+            </div>
+            <div class="flex-1">
+                <div class="text-white font-black text-sm mb-0.5">لا تعرف رقم طلبك؟</div>
+                <div class="text-white/40 text-xs">تواصل معنا مباشرةً وسنفيدك فوراً</div>
+            </div>
+            <a href="https://wa.me/971588205679?text=أريد الاستفسار عن حالة طلبي" target="_blank" rel="noopener"
+                class="bg-green-500 hover:bg-green-400 text-white font-black text-xs px-4 py-2 rounded-xl transition-colors flex-shrink-0">
+                تواصل
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-teal-950 border-t border-white/10 py-6 text-center">
+        <a href="index.html">
+            <img src="logo.png" alt="الوسام" class="h-10 mx-auto mb-3 object-contain opacity-70">
+        </a>
+        <p class="text-white/30 text-xs">© 2026 الوسام للترجمة القانونية</p>
+    </footer>
+
+    <script>
+        // Simulate order lookup
+        const DEMO_ORDERS = {
+            'WS-2026-1234': { status: 'قيد التنفيذ', eta: 2 },
+            'WS-2026-5678': { status: 'جاهز للاستلام', eta: 0 },
+            '+971500000000': { status: 'قيد المراجعة', eta: 3 },
+        };
+
+        document.getElementById('track-btn').addEventListener('click', doTrack);
+        document.getElementById('track-input').addEventListener('keypress', e => { if (e.key === 'Enter') doTrack(); });
+
+        function doTrack() {
+            const val = document.getElementById('track-input').value.trim();
+            if (!val) return;
+
+            const result = document.getElementById('track-result');
+            const notFound = document.getElementById('track-notfound');
+            result.classList.add('hidden');
+            notFound.classList.add('hidden');
+
+            // Simulate lookup (real implementation: call backend API)
+            const order = DEMO_ORDERS[val];
+            setTimeout(() => {
+                if (order) {
+                    document.getElementById('result-order-num').textContent = val;
+                    document.getElementById('result-status-badge').textContent = order.status;
+                    const eta = new Date();
+                    eta.setDate(eta.getDate() + order.eta);
+                    document.getElementById('eta-date').textContent = order.eta === 0
+                        ? 'جاهز الآن للاستلام! 🎉'
+                        : `${eta.toLocaleDateString('ar-AE', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}`;
+                    result.classList.remove('hidden');
+                } else {
+                    notFound.classList.remove('hidden');
+                }
+            }, 600);
+        }
+    </script>
+</body>
+
+</html>
